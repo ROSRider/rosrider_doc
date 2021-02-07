@@ -1,5 +1,3 @@
-toctree
-
 [GETTING STARTED](01_START.md)
 
 [SOFTWARE](02_SOFTWARE.md)
