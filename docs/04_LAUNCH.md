@@ -1,4 +1,4 @@
-### ROSRider launch scripts
+### Launching ROSRider
 
 ```robot.launch``` launches the ROSRider board, differential drive controller, goal controller, odometry node, and is the basic robot bringup file.
 

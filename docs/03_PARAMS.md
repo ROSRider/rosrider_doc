@@ -1,19 +1,16 @@
-### Parameter Configuration
+### Parameters Explained
 
-# TODO: parameters have changed and we have config_flags
+TODO: section on config flags
 
-# TODO: section on config flags
+TODO: explanation about single phase encoders, and config, and mention you have to * 2 everything, or reduce ppr by half.
 
-# TODO: explanation about single phase encoders, and config, and mention you have to * 2 everything.
-# TODO: or reduce ppr by half.
-# TODO: test if this solution works, see also if it produces the correct position.
-
->Notice: You have to finish [Installing the ROSRider Package](01_START.md) and [Installing the ROSRider System](02_SOFTWARE.md) before following instructions on this document.
+>Notice: You have to finish [Getting Started with the ROSRider Board](01_START.md) and [Installing the ROSRider Software](02_SOFTWARE.md) before following instructions on this document.
 
 Here is the ROSRider parameter file [rosrider.yaml](../config/rosrider.yaml)
 
 ```console
-rosrider/params: { 
+rosrider/params: {
+config_flags: 48,
 update_rate: 10,
 encoder_ppr: 12,
 gear_ratio: 380,
@@ -24,10 +21,8 @@ mt_amp_limit: 1.2,
 bat_volts_high: 14.4,
 bat_volts_low: 6.0,
 max_rpm: 90.0,
-left_swap: false,
-right_swap: false,
-left_reverse: false,
-right_reverse: false,
+left_deadzone: 64,
+right_deadzone: 64,
 max_idle_seconds: 1800,
 /left_wheel/controller/Kp: 4.8,
 /left_wheel/controller/Ki: 3.2,
