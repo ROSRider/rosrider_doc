@@ -1,4 +1,4 @@
-### Getting Started with the ROSRider Board
+### Install ROSRider Package
 
 >Make sure you have successfully installed ROS Noetic, and the required dependencies before executing the instructions below.
 
