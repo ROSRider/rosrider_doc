@@ -1,5 +1,6 @@
 site_name: ROSRider Documentation
 pages:
+- Readme: README.md
 - Getting Started: 01_START.md
 - Software: 02_SOFTWARE.md
 - Parameters: 03_PARAMS.md
