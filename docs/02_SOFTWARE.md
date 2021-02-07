@@ -1,6 +1,6 @@
 ### Installing the ROSRider Software
 
->Notice: You have to finish [Getting Started with the ROSRider Board](01_START.md) before following instructions on this document.
+>Notice: You have to finish [Getting Started](01_START.md) before following instructions on this document.
 
 Open A Terminal Window, and execute the following commands:
 

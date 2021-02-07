@@ -4,7 +4,7 @@ TODO: section on config flags
 
 TODO: explanation about single phase encoders, and config, and mention you have to * 2 everything, or reduce ppr by half.
 
->Notice: You have to finish [Getting Started with the ROSRider Board](01_START.md) and [Installing the ROSRider Software](02_SOFTWARE.md) before following instructions on this document.
+>Notice: You have to finish [Getting Started](01_START.md) and [Installing the ROSRider Software](02_SOFTWARE.md) before following instructions on this document.
 
 Here is the ROSRider parameter file [rosrider.yaml](../config/rosrider.yaml)
 
