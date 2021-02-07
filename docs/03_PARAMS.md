@@ -110,6 +110,13 @@ It should generate some output like:
 
 >***Make sure your robot / setup is in a jack, i.e. the wheels do not touch the ground.***
 
+
+### Header3
+
+#### Header4a
+
+#### Header4b
+
 ### Verification of motor direction
 
 Open a Terminal Window, and execute the following command:
