@@ -4,4 +4,5 @@ pages:
 - Getting Started: 01_START.md
 - Software: 02_SOFTWARE.md
 - Parameters: 03_PARAMS.md
+- Launch: 04_LAUNCH.md
 theme: readthedocs
