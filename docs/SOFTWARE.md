@@ -22,11 +22,7 @@ The explanation of the packages are as follows:
 
 `rosrider_teleop` contains configuration files to use the robot with a gamepad. (Logitech F710)
 
-`rosrider_examples` contains example programs, that use odometry.
-
-- move_tf : moves the robot to point x, y
-- loop_tf : loops the robot following a trajectory
-- pace.py : pace robot between two points
+`rosrider_examples` contains example programs, that use odometry, and camera. For more information click [here](EXAMPLES.md)
 
 `pid` external pid controller, required by rosrider\_diff\_drive
 
@@ -34,15 +30,15 @@ To continue, click [PARAMETERS](PARAMS.md)
 
 ### Installing Gazebo Related Software
 
-You can use Gazebo to run ROSRider on your computer. 
+You can use Gazebo to run ROSRider on your computer. This part is optional.
 
 ### Installing IMAGE Package
 
-TBD
+This part is optional. TBD
 
 ### Installing FXIMU
 
-TBD
+This part is optional. TBD
 
 
 

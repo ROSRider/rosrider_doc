@@ -153,7 +153,7 @@ Solution is:
 
 	source ~/catkin_ws/devel/setup.bash
 
-Put the above statement at the end of ```~/.bashrc``` file
+Put the above statement at the end of `~/.bashrc` file
 
 If you see errors like below, you dont have access to the serial port, or device is in hibernate mode
 
