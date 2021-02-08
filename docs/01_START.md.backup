@@ -177,7 +177,7 @@ crw-rw-rw- 1 root root 166, 0 Feb  8 13:41 /dev/ttyACM0
 
 You have to make sure that your user has the correct privileges to access the serial port. Here above the serial port is set 666, so each user can access it.
 
-The device could be in sleeping mode. Press wake button, if the led does not indicate startup, press reset. */dev/ttyACM0* should appear.
+The device could be in sleeping mode. Press wake button, if the led does not indicate startup, press reset. Try again.
 
 
 

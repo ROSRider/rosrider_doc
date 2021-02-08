@@ -49,11 +49,10 @@ robot_ekf_cam.launch
 
 explain teleoperation
 
-### Installing image
+
 
 ### Installing Gazebo related
 
 ### Installing FXIMU
 
-? check if others ?
 
