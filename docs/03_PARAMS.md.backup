@@ -57,8 +57,8 @@ TODO: explanation about single phase encoders, and config, and mention you have 
 | mt\_amp_limit      | Motor current limit | Amp |
 | bat\_volts_high    | Battery volts maximum limit | Volts |
 | bat\_volts_low     | Battery volts minimum limit | Volts |
-| left\_deadzone     | Deadzone compensation for left motor, set 0 to disable | uint8_t |
-| right\_deadzone    | Deadzone compensation for right motor, set 0 to disable | uint8_t |
+| left\_deadzone      | | uint8_t |
+| right\_deadzone     | | uint8_t |
 | max_rpm            | Max rpm of the motor/gear setup. Use 90% of motor max rpm | Rounds per minute |
 | max\_idle_seconds  | Maximum seconds without connection before unit goes to sleep 0 to disable | Seconds |
 
