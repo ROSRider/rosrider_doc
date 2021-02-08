@@ -33,8 +33,6 @@ max_idle_seconds: 1800,
 Compose the configuration file correctly, and ROSRider will provide a differential drive controller, odomety, goal controller, ekf based localization based on your parameters.
 Instructions for setting / verifying / tuning all parameters given below.
 
-### Parameter Table
-
 
 | Parameter          | Description | Unit |
 |--------------------|-------------|------|
