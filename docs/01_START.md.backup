@@ -24,7 +24,7 @@ To test that everything is setup correctly, execute:
 
     roscd rosrider
 
-If the above command changes directory to *~/catkin_ws/src/rosrider* and if you received no errors in the previous *catkin_make* command, the ROSRider package is setup correctly.  
+If the above command changes directory to ```~/catkin_ws/src/rosrider``` and if you received no errors in the previous ```catkin_make``` command, the ROSRider package is setup correctly.  
 
 
 ### Testing
@@ -49,7 +49,7 @@ The hard limits on the suply voltage at startup are 6.0V minimum and 14.4V maxim
 | Flashing 1 sec    | Power failure, device will go to sleep mode in 30 sec |
 | Flipping on-off   | Connected to ROS |
 
->Notice: if the devices goes in sleep mode, you have to press *WAKE* button.
+>Notice: if the devices goes in sleep mode, you have to press ```WAKE``` button.
 
 Open A Terminal Window, and execute the following command:
 
@@ -113,7 +113,7 @@ On Another Terminal Window, List ROS topics by executing the following command:
 
     rostopic list
 
-It will list topics provided by ROSRider board. Topics are explained [here](05_TOPICS.md) in detail.
+It will list of subscribers and publishers provided by ROSRider board.
 
 ```console
 /left_wheel/control_effort
@@ -153,7 +153,7 @@ Solution is:
 
 	source ~/catkin_ws/devel/setup.bash
 
-Put the above statement at the end of *~/.bashrc* file
+Put the above statement at the end of ```~/.bashrc``` file
 
 If you see errors like below, you dont have access to the serial port, or device is in hibernate mode
 
@@ -177,7 +177,7 @@ crw-rw-rw- 1 root root 166, 0 Feb  8 13:41 /dev/ttyACM0
 
 You have to make sure that your user has the correct privileges to access the serial port. Here above the serial port is set 666, so each user can access it.
 
-The device could be in sleeping mode. Press wake button, if the led does not indicate startup, press reset. Try again.
+The device could be in sleeping mode. Press wake button, if the led does not indicate startup, press reset. ```/dev/ttyACM0``` should appear.
 
 
 
