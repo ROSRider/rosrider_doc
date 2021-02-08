@@ -116,7 +116,7 @@ rqt_image_view /raspicam_node/image_color/compressed
 
 You should see a window pop up, and display the image that the robot captures like below:
 
-![rqt_image-view](https://raw.githubusercontent.com/ROSRider/rosrider_doc/main/img/rqt_image_view.png)
+![rqt_image_view](https://raw.githubusercontent.com/ROSRider/rosrider_doc/main/img/rqt_image_view.png)
 
 
 ### robot_ekf.launch
@@ -132,8 +132,23 @@ Execute the following commands:
 
 To see output, click [here](robot_ekf_launch.txt)
 
-In another window, list topics by typing `rostopic list`, and you should see:
+In another window, list topics by typing `rostopic list`, and you should see topics containing:
 
+```console
+/imu/data
+/imu/data_viz
+/imu/mag
+/odometry/filtered
+```
+
+
+`imu_data` and `imu/data_viz` are imu topics, the latter is slowed down for visualization purposes. `/imu/mag` topic has the magnetometer data. If you type `rostopic echo /imu/data` you will see a stream of imu data.
+
+If your EKF is configured correctly and running you will see the `/odometry/filtered` topic. 
+
+`rostopic echo /odometry/filtered` will stream the odometry fused with imu data.
+
+In this mode, for example if the wheel slips while executing a turn while `/odom` will show wrong data `/odometry/filtered` will not be effected. See [EKF](EKF.md) for more information.
 
 ### remote.launch
 
