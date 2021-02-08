@@ -1,4 +1,4 @@
-### SysCtl Service
+### SYSCTL Service
 
 The ROSRider board provides a `/rosrider/sysctl` service. Using this service you can send commands, to set different configuration options for the motor drivers and system.
 

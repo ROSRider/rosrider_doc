@@ -73,41 +73,55 @@ Execute the following commands:
 
 To see output, click [here](robot_cam_launch.txt)
 
-In another window, list topics by typing `rostopic list`, and you should see:
+In another window, list topics by typing `rostopic list`, and you should see topics including:
 
 ```console
 /raspicam_node/camera_info
 /raspicam_node/image_color
 /raspicam_node/image_color/compressed
-/raspicam_node/image_color/compressed/parameter_descriptions
-/raspicam_node/image_color/compressed/parameter_updates
 /raspicam_node/image_mono
 /raspicam_node/image_mono/compressed
-/raspicam_node/image_mono/compressed/parameter_descriptions
-/raspicam_node/image_mono/compressed/parameter_updates
-/raspicam_node/image_proc_node_debayer/parameter_descriptions
-/raspicam_node/image_proc_node_debayer/parameter_updates
-/raspicam_node/image_proc_node_rectify_color/parameter_descriptions
-/raspicam_node/image_proc_node_rectify_color/parameter_updates
-/raspicam_node/image_proc_node_rectify_mono/parameter_descriptions
-/raspicam_node/image_proc_node_rectify_mono/parameter_updates
 /raspicam_node/image_raw
 /raspicam_node/image_raw/compressed
 /raspicam_node/image_rect
 /raspicam_node/image_rect/compressed
-/raspicam_node/image_rect/compressed/parameter_descriptions
-/raspicam_node/image_rect/compressed/parameter_updates
 /raspicam_node/image_rect_color
 /raspicam_node/image_rect_color/compressed
-/raspicam_node/image_rect_color/compressed/parameter_descriptions
-/raspicam_node/image_rect_color/compressed/parameter_updates
-/raspicam_node/parameter_descriptions
-/raspicam_node/parameter_updates
 ```
+
+`raspicam_node/camera_info` contains camera info, frame rate
+
+`raspicam_node/image_raw` is the unprocessed image from camera, usually with fish eye lens
+
+`raspicam_node/image_mono` is the processed mono image
+
+`raspicam_node/image_color` is the processed color image
+
+`raspicam_node/image_rect` is the rectified mono image
+
+`raspicam_node/image_rect_color` is the rectified color image
+
+If you add `/compressed` at the end of the image name, you will get the compressed image
+
+>When using a fish eye lens the image is distorted. Rectification is the process to undistort the image, which is necessary for many image processing algorithms to work effectively.
+
+>For rectification to work, you need your lens calibrated. Consult to [CALIBRATION](CALIBRATION.md) for instructions.
+
+
+**Connecting to camera on the robot, viewing video:**
+
+```console
+rqt_image_view /raspicam_node/image_color/compressed
+```
+
+
+
 
 ### robot_ekf.launch
 
 >Notice: In order to launch the `robot_ekf.launch` you need imu sensor attached and configured to your robot.
+
+### TODO: fximu config file exists and configured, and calibrated.
 
 Execute the following commands:
 
@@ -117,7 +131,6 @@ Execute the following commands:
 To see output, click [here](robot_ekf_launch.txt)
 
 In another window, list topics by typing `rostopic list`, and you should see:
-
 
 
 ### remote.launch

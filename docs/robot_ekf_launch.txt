@@ -1,0 +1,289 @@
+... logging to /root/.ros/log/c43edec4-6a39-11eb-98d3-74da38dc6b89/roslaunch-lrx-1646.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+
+started roslaunch server http://lrx.local:44773/
+
+SUMMARY
+========
+
+CLEAR PARAMETERS
+ * /ekf_se/
+
+PARAMETERS
+ * /diff_drive_go_to_goal/angular_tolerance: 0.1
+ * /diff_drive_go_to_goal/forwardMovementOnly: False
+ * /diff_drive_go_to_goal/kA: 1.0
+ * /diff_drive_go_to_goal/kB: -0.8
+ * /diff_drive_go_to_goal/kP: 0.5
+ * /diff_drive_go_to_goal/linear_tolerance: 0.1
+ * /diff_drive_go_to_goal/max_angular_speed: 3.14
+ * /diff_drive_go_to_goal/max_linear_speed: 0.25
+ * /diff_drive_go_to_goal/min_angular_speed: 1.57
+ * /diff_drive_go_to_goal/min_linear_speed: 0.1
+ * /diff_drive_go_to_goal/rate: 20
+ * /ekf_se/acceleration_gains: [0.8, 0.0, 0.0, 0...
+ * /ekf_se/acceleration_limits: [1.3, 0.0, 0.0, 0...
+ * /ekf_se/base_link_frame: base_footprint
+ * /ekf_se/control_config: [True, False, Fal...
+ * /ekf_se/control_timeout: 0.1
+ * /ekf_se/debug: False
+ * /ekf_se/debug_out_file: /tmp/ekf_debug.txt
+ * /ekf_se/deceleration_gains: [1.0, 0.0, 0.0, 0...
+ * /ekf_se/deceleration_limits: [1.3, 0.0, 0.0, 0...
+ * /ekf_se/frequency: 20
+ * /ekf_se/imu0_config: [False, False, Fa...
+ * /ekf_se/imu0_differential: False
+ * /ekf_se/imu0_linear_acceleration_rejection_threshold: 0.8
+ * /ekf_se/imu0_nodelay: False
+ * /ekf_se/imu0_pose_rejection_threshold: 0.8
+ * /ekf_se/imu0_queue_size: 5
+ * /ekf_se/imu0_relative: True
+ * /ekf_se/imu0_remove_gravitational_acceleration: True
+ * /ekf_se/imu0_twist_rejection_threshold: 0.8
+ * /ekf_se/initial_estimate_covariance: ['1e-9', 0, 0, 0,...
+ * /ekf_se/map_frame: map
+ * /ekf_se/odom0: odom
+ * /ekf_se/odom0_config: [False, False, Fa...
+ * /ekf_se/odom0_differential: False
+ * /ekf_se/odom0_nodelay: False
+ * /ekf_se/odom0_pose_rejection_threshold: 5
+ * /ekf_se/odom0_queue_size: 2
+ * /ekf_se/odom0_relative: False
+ * /ekf_se/odom0_twist_rejection_threshold: 4
+ * /ekf_se/odom_frame: odom
+ * /ekf_se/print_diagnostics: True
+ * /ekf_se/process_noise_covariance: [0.05, 0, 0, 0, 0...
+ * /ekf_se/publish_acceleration: False
+ * /ekf_se/publish_tf: False
+ * /ekf_se/sensor_timeout: 0.1
+ * /ekf_se/stamped_control: False
+ * /ekf_se/transform_time_offset: 0.0
+ * /ekf_se/transform_timeout: 0.0
+ * /ekf_se/two_d_mode: True
+ * /ekf_se/use_control: True
+ * /ekf_se/world_frame: odom
+ * /joint_state_publisher/rate: 20.0
+ * /joint_state_publisher/source_list: ['wheel_states']
+ * /joint_state_publisher/use_gui: False
+ * /joy_node/autorepeat_rate: 20
+ * /joy_node/deadzone: 0.2
+ * /joy_node/dev: /dev/input/js0
+ * /left_wheel/controller/Kd: 0.02
+ * /left_wheel/controller/Ki: 3.2
+ * /left_wheel/controller/Kp: 4.8
+ * /left_wheel/controller/lower_limit: -1023
+ * /left_wheel/controller/max_loop_frequency: 50.0
+ * /left_wheel/controller/min_loop_frequency: 10.0
+ * /left_wheel/controller/setpoint_timeout: 0.1
+ * /left_wheel/controller/upper_limit: 1023
+ * /left_wheel/controller/windup_limit: 1023
+ * /params/imu/adaptive_gain: 1
+ * /params/imu/afsr: 1
+ * /params/imu/bias_alpha: 0.1
+ * /params/imu/bias_estimation: 1
+ * /params/imu/calibration_mode: 0
+ * /params/imu/gain_acc: 0.02
+ * /params/imu/gain_mag: 0.01
+ * /params/imu/gfsr: 2
+ * /params/imu/imu_frame_id: base_imu_link
+ * /params/imu/kAccelerationThreshold: 0.25
+ * /params/imu/kAngularVelocityThreshold: 0.06
+ * /params/imu/kDeltaAngularVelocityThreshold: 0.05
+ * /params/imu/mag_frame_id: mag_imu_link
+ * /params/imu/mag_offset_x: 27.0
+ * /params/imu/mag_offset_y: 78.14
+ * /params/imu/mag_offset_z: 85.36
+ * /params/imu/mag_soft_iron_ix: 0.987
+ * /params/imu/mag_soft_iron_iy: -0.04
+ * /params/imu/mag_soft_iron_iz: -0.021
+ * /params/imu/mag_soft_iron_jx: -0.04
+ * /params/imu/mag_soft_iron_jy: 1.006
+ * /params/imu/mag_soft_iron_jz: 0.006
+ * /params/imu/mag_soft_iron_kx: -0.021
+ * /params/imu/mag_soft_iron_ky: 0.006
+ * /params/imu/mag_soft_iron_kz: 1.009
+ * /params/imu/output_rate_divider: 8
+ * /params/imu/sensor_read_rate: 400
+ * /params/imu/steady_limit: 32
+ * /params/imu/use_mag: 1
+ * /params/imu/world_frame: 0
+ * /right_wheel/controller/Kd: 0.02
+ * /right_wheel/controller/Ki: 3.2
+ * /right_wheel/controller/Kp: 4.8
+ * /right_wheel/controller/lower_limit: -1023
+ * /right_wheel/controller/max_loop_frequency: 50.0
+ * /right_wheel/controller/min_loop_frequency: 10.0
+ * /right_wheel/controller/setpoint_timeout: 0.1
+ * /right_wheel/controller/upper_limit: 1023
+ * /right_wheel/controller/windup_limit: 1023
+ * /robot_description: <?xml version="1....
+ * /robot_state_publisher/publish_frequency: 20.0
+ * /rosdistro: noetic
+ * /rosrider/params/base_width: 0.1
+ * /rosrider/params/bat_volts_high: 14.4
+ * /rosrider/params/bat_volts_low: 6.0
+ * /rosrider/params/config_flags: 48
+ * /rosrider/params/encoder_ppr: 12
+ * /rosrider/params/gear_ratio: 380
+ * /rosrider/params/left_deadzone: 64
+ * /rosrider/params/main_amp_limit: 3.6
+ * /rosrider/params/max_idle_seconds: 1800
+ * /rosrider/params/max_rpm: 90.0
+ * /rosrider/params/mt_amp_limit: 1.2
+ * /rosrider/params/right_deadzone: 64
+ * /rosrider/params/update_rate: 10
+ * /rosrider/params/wheel_dia: 0.06
+ * /rosversion: 1.15.9
+ * /serial_node_fximu/baud: 230400
+ * /serial_node_fximu/port: /dev/ttyACM1
+ * /serial_node_rosrider/baud: 230400
+ * /serial_node_rosrider/port: /dev/ttyACM0
+ * /teleop_twist_joy/axis_angular: 3
+ * /teleop_twist_joy/axis_linear: 1
+ * /teleop_twist_joy/enable_button: 4
+ * /teleop_twist_joy/enable_turbo_button: 5
+ * /teleop_twist_joy/scale_angular: 1.0
+ * /teleop_twist_joy/scale_linear: 0.2
+ * /teleop_twist_joy/scale_linear_turbo: 0.25
+
+NODES
+  /
+    base_footprint_to_base_imu_link (tf/static_transform_publisher)
+    controller (rosrider_diff_drive/diff_drive_controller)
+    diff_drive_go_to_goal (rosrider_diff_drive/diff_drive_go_to_goal)
+    ekf_se (robot_localization/ekf_localization_node)
+    imu_throttle (topic_tools/throttle)
+    joint_state_publisher (joint_state_publisher/joint_state_publisher)
+    joy_node (joy/joy_node)
+    map_to_odom (tf/static_transform_publisher)
+    odom_publisher (rosrider_diff_drive/diff_drive_odometry)
+    robot_state_publisher (robot_state_publisher/robot_state_publisher)
+    serial_node_fximu (rosserial_python/serial_node.py)
+    serial_node_rosrider (rosserial_python/serial_node.py)
+    teleop_twist_joy (teleop_twist_joy/teleop_node)
+  /left_wheel/
+    controller (pid/controller)
+  /right_wheel/
+    controller (pid/controller)
+
+ROS_MASTER_URI=http://127.0.0.1:11311
+
+process[map_to_odom-1]: started with pid [1656]
+process[serial_node_rosrider-2]: started with pid [1657]
+process[left_wheel/controller-3]: started with pid [1658]
+process[right_wheel/controller-4]: started with pid [1663]
+process[robot_state_publisher-5]: started with pid [1664]
+process[joint_state_publisher-6]: started with pid [1669]
+
+PID PARAMETERS
+-----------------------------------------
+Kp: 4.8,  Ki: 3.2,  Kd: 0.02
+LPF cutoff frequency: 1/4 of sampling rate
+pid node name: /left_wheel/controller
+Name of topic from controller: control_effort
+Name of topic from the plant: state
+Name of setpoint topic: setpoint
+Integral-windup limit: 1023
+Saturation limits: 1023/-1023
+-----------------------------------------
+process[controller-7]: started with pid [1674]
+
+PID PARAMETERS
+-----------------------------------------
+Kp: 4.8,  Ki: 3.2,  Kd: 0.02
+LPF cutoff frequency: 1/4 of sampling rate
+pid node name: /right_wheel/controller
+Name of topic from controller: control_effort
+Name of topic from the plant: state
+Name of setpoint topic: setpoint
+Integral-windup limit: 1023
+Saturation limits: 1023/-1023
+-----------------------------------------
+process[odom_publisher-8]: started with pid [1675]
+process[diff_drive_go_to_goal-9]: started with pid [1680]
+process[joy_node-10]: started with pid [1682]
+process[teleop_twist_joy-11]: started with pid [1683]
+process[base_footprint_to_base_imu_link-12]: started with pid [1688]
+process[serial_node_fximu-13]: started with pid [1693]
+process[ekf_se-14]: started with pid [1694]
+process[imu_throttle-15]: started with pid [1695]
+[INFO] [1612811126.613963]: ROS Serial Python Node
+[INFO] [1612811126.644988]: Connecting to /dev/ttyACM0 at 230400 baud
+[INFO] [1612811126.710932]: /controller started
+[INFO] [1612811127.000951]: ROS Serial Python Node
+[INFO] [1612811127.035361]: Connecting to /dev/ttyACM1 at 230400 baud
+[INFO] [1612811128.355254]: /diff_drive_go_to_goal started
+[INFO] [1612811128.403927]: /odom_publisher started
+[INFO] [1612811128.765576]: Requesting topics...
+[INFO] [1612811128.787632]: Note: publish buffer size is 512 bytes
+[INFO] [1612811128.800449]: Setup service server on rosrider/sysctl [rosrider/SysCtrlService]
+[INFO] [1612811128.819070]: Setup service server on rosrider/led_emitter [rosrider/LedService]
+[INFO] [1612811128.833175]: Setup publisher on left_wheel/state [std_msgs/Float64]
+[INFO] [1612811128.853095]: Setup publisher on right_wheel/state [std_msgs/Float64]
+[INFO] [1612811128.868773]: Setup publisher on left_wheel/position [std_msgs/Int32]
+[INFO] [1612811128.887367]: Setup publisher on right_wheel/position [std_msgs/Int32]
+[INFO] [1612811128.913662]: Setup publisher on /rosrider/diagnostics [rosrider/Diagnostics]
+[INFO] [1612811128.920254]: Note: subscribe buffer size is 512 bytes
+[INFO] [1612811128.953977]: Setup subscriber on left_wheel/control_effort [std_msgs/Float64]
+[INFO] [1612811128.984413]: Setup subscriber on right_wheel/control_effort [std_msgs/Float64]
+[INFO] [1612811128.995253]: default_status: 1
+[INFO] [1612811129.009472]: update_rate: 10
+[INFO] [1612811129.024748]: encoder_ppr: 12
+[INFO] [1612811129.037369]: gear_ratio: 380
+[INFO] [1612811129.043734]: wheel_dia: 0.060
+[INFO] [1612811129.060955]: base_width: 0.100
+[INFO] [1612811129.067660]: main_amp_limit: 3.60
+[INFO] [1612811129.080972]: mt_amp_limit: 1.20
+[INFO] [1612811129.088833]: bat_volts_high: 14.4
+[INFO] [1612811129.100940]: bat_volts_low: 6.0
+[INFO] [1612811129.109417]: max_rpm: 90.0
+[INFO] [1612811129.116038]: left_swap: false
+[INFO] [1612811129.134333]: right_swap: false
+[INFO] [1612811129.140874]: left_reverse: false
+[INFO] [1612811129.152977]: right_reverse: false
+[INFO] [1612811129.165189]: left_enc_ab: true
+[INFO] [1612811129.170858]: Requesting topics...
+[INFO] [1612811129.175419]: right_enc_ab: true
+[INFO] [1612811129.189141]: left_deadzone: 0
+[INFO] [1612811129.204979]: right_deadzone: 0
+[INFO] [1612811129.217041]: max_idle_seconds: 1800
+[INFO] [1612811129.229909]: config_flags: 48
+[INFO] [1612811129.237243]: power_status: 0
+[INFO] [1612811129.248892]: motor_status: 240
+[INFO] [1612811129.260397]: system_status: 0
+[INFO] [1612811129.372280]: Note: publish buffer size is 512 bytes
+[INFO] [1612811129.377103]: Setup publisher on imu/data [sensor_msgs/Imu]
+[INFO] [1612811129.391368]: Setup publisher on imu/mag [sensor_msgs/MagneticField]
+[INFO] [1612811129.408490]: Setup publisher on imu/array [std_msgs/Int16MultiArray]
+[INFO] [1612811129.445915]: calibration_mode: 0
+[INFO] [1612811129.458881]: fximu parameters read from eeprom
+[INFO] [1612811129.472778]: firmware revision: 17July2020
+[INFO] [1612811129.478996]: sensor_read_rate: 400
+[INFO] [1612811129.485181]: output_rate_divider: 8
+[INFO] [1612811129.494011]: adaptive_gain: true
+[INFO] [1612811129.506965]: bias_estimation: true
+[INFO] [1612811129.513523]: gain_acc: 0.020
+[INFO] [1612811129.521990]: gain_mag: 0.010
+[INFO] [1612811129.533031]: bias_alpha: 0.100
+[INFO] [1612811129.548914]: imu_frame_id: base_imu_link
+[INFO] [1612811129.554830]: mag_frame_id: base_mag_link
+[INFO] [1612811129.561037]: GFSR: 2
+[INFO] [1612811129.568427]: AFSR: 1
+[INFO] [1612811129.580369]: steady_limit: 32
+[INFO] [1612811129.586292]: world_frame: ENU
+[INFO] [1612811129.593317]: use_mag: 1
+[INFO] [1612811129.600508]: kAngularVelocityThreshold: 0.060
+[INFO] [1612811129.614627]: kAccelerationThreshold: 0.250
+[INFO] [1612811129.620595]: kDeltaAngularVelocityThreshold: 0.050
+[INFO] [1612811129.626371]: mag_offsets: 27.000, 78.140, 85.360
+[INFO] [1612811129.640962]: soft_iron_matrix[0]: 0.987, -0.040, -0.021
+[INFO] [1612811129.646786]: soft_iron_matrix[1]: -0.040, 1.006, 0.006
+[INFO] [1612811129.652703]: soft_iron_matrix[2]: -0.021, 0.006, 1.009
+[ WARN] [1612811133.723388332]: Waiting for first setpoint message.
+[ WARN] [1612811133.790212065]: Waiting for first setpoint message.
+[ INFO] [1612811136.269332313]: prev_time is 0, doing nothing
+[ INFO] [1612811136.271522582]: prev_time is 0, doing nothing
+[ WARN] [1612811136.370553028]: Setpoint message timed out, will stop publising control_effort_messages
+[ WARN] [1612811136.371573176]: Setpoint message timed out, will stop publising control_effort_messages
