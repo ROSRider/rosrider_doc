@@ -8,15 +8,10 @@
 
 [Services](SERVICES.md)
 
-[Diagnostics](DIAGS.md)
-
-[RVIZ](RVIZ.md)
-
-[Examples](EXAMPLES.md)
-
-[Calibration](CALIBRATION.md)
-
-[Procedures](PROCEDURES.md)
-
-[Network](NETWORK.md)
+[Diagnostics]: DIAGS.md
+[RVIZ]: RVIZ.md
+[Examples]: EXAMPLES.md
+[Calibration]: CALIBRATION.md
+[Procedures]: PROCEDURES.md
+[Network]NETWORK.md
 

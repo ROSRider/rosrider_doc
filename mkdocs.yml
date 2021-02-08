@@ -6,4 +6,10 @@ pages:
 - Parameters: PARAMS.md
 - Launching ROSRider: LAUNCH.md
 - Services: SERVICES.md
+- Diagnostics: DIAGS.md
+- RVIZ: RVIZ.md
+- Examples: EXAMPLES.md
+- Calibration: CALIBRATION.md
+- Procedures: PROCEDURES.md
+- Network: NETWORK.md
 theme: readthedocs
