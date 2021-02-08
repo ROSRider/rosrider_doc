@@ -17,7 +17,7 @@ Execute the following commands:
 
 To see output, click [here](robot_launch.txt)
 
-In another window, list topics by typing `rostopic list`, you should see:
+In another window, list topics by typing `rostopic list`, and you should see:
 
 ```console
 /cmd_vel
@@ -73,7 +73,37 @@ Execute the following commands:
 
 To see output, click [here](robot_cam_launch.txt)
 
-In another window, list topics by typing `rostopic list`, you should see:
+In another window, list topics by typing `rostopic list`, and you should see:
+
+```console
+/raspicam_node/camera_info
+/raspicam_node/image_color
+/raspicam_node/image_color/compressed
+/raspicam_node/image_color/compressed/parameter_descriptions
+/raspicam_node/image_color/compressed/parameter_updates
+/raspicam_node/image_mono
+/raspicam_node/image_mono/compressed
+/raspicam_node/image_mono/compressed/parameter_descriptions
+/raspicam_node/image_mono/compressed/parameter_updates
+/raspicam_node/image_proc_node_debayer/parameter_descriptions
+/raspicam_node/image_proc_node_debayer/parameter_updates
+/raspicam_node/image_proc_node_rectify_color/parameter_descriptions
+/raspicam_node/image_proc_node_rectify_color/parameter_updates
+/raspicam_node/image_proc_node_rectify_mono/parameter_descriptions
+/raspicam_node/image_proc_node_rectify_mono/parameter_updates
+/raspicam_node/image_raw
+/raspicam_node/image_raw/compressed
+/raspicam_node/image_rect
+/raspicam_node/image_rect/compressed
+/raspicam_node/image_rect/compressed/parameter_descriptions
+/raspicam_node/image_rect/compressed/parameter_updates
+/raspicam_node/image_rect_color
+/raspicam_node/image_rect_color/compressed
+/raspicam_node/image_rect_color/compressed/parameter_descriptions
+/raspicam_node/image_rect_color/compressed/parameter_updates
+/raspicam_node/parameter_descriptions
+/raspicam_node/parameter_updates
+```
 
 ### robot_ekf.launch
 
@@ -86,11 +116,15 @@ Execute the following commands:
 
 To see output, click [here](robot_ekf_launch.txt)
 
-In another window, list topics by typing `rostopic list`, you should see:
+In another window, list topics by typing `rostopic list`, and you should see:
+
+
 
 ### remote.launch
 
 This file launches `rviz` with a configuration file for ROSRider. This is usually done in a remote computer, connected to `roscore` running at your robot. To accomplish this first set `ROS_MASTER_URI` and `ROS_HOST` environment variables.
+
+`RVIZ` is the ROS visualization program. Whatever the state your robot is in, is depicted in rviz, along with other data such as camera, sensory, etc.
 
 On your laptop type:
 
@@ -101,7 +135,7 @@ export ROS_HOSTNAME=laptop.local
 
 `robot` is the hostname of the robot, and `laptop` is the hostname of the client that you are connecting from. Both robot and client must be able to resolve and contact each other on the network.
 
-Consult to [NETWORKING](NETWORK.md) for detailed explanation, testing and troubleshooting.
+>Consult to [NETWORKING](NETWORK.md) for detailed explanation, testing and troubleshooting.
 
 Once networking is in order, type the following commands:
 
@@ -110,6 +144,11 @@ roscd rosrider/launch
 roslaunch/remote.launch
 ```
 
-RVIZ program should pop up, showing a model of a ROSRider robot, along with the TF, etc
+RVIZ program should pop up, showing a model of a ROSRider robot. ROSRider's position, heading, and wheel joint angles will be depicted on `RVIZ`. Also, if the IMU and EKF is deployed, then if the robot is turned maually, it would also be depicted in `RVIZ`
 
-[TODO: screen cap]
+You should see a robot like in the image below:
+
+[![RVIZ](../img/rviz_remote.png)](https://www.youtube.com/watch?v=1SKq0etHaYM "RVIZ Demo")
+
+Click on the image above to see a video of ROSRider executing a `2D Nav Goal` given by RVIZ.
+
