@@ -114,7 +114,9 @@ If you add `/compressed` at the end of the image name, you will get the compress
 rqt_image_view /raspicam_node/image_color/compressed
 ```
 
+You should see a window pop up, and display the image that the robot captures like below:
 
+![rqt_image-view](https://raw.githubusercontent.com/ROSRider/rosrider_doc/main/img/rqt_image_view.png)
 
 
 ### robot_ekf.launch
