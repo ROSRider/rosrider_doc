@@ -110,7 +110,7 @@ To send a LED command, open a terminal and execute the following command:
 
     rosservice call /rosrider/led_emitter { fr: 0x88888801, top: 0x0, fr: 0x88888801, br:0xFF000000 bl:0xFF000000, frequency: 2.0 }
 
-### TODO: verify this
+[TODO: verify this]
 
 And you should see the front right and left lamps are constantly on, as white. The back right, and left lamps are blinking red, at a frequency of 2 hz. With this interface,
 you can set any led to any color, also have them blink or stay steady.

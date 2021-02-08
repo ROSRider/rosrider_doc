@@ -1,0 +1,173 @@
+... logging to /home/ubuntu/.ros/log/23bf4862-6a11-11eb-b71d-297e067a6359/roslaunch-rosrider-9411.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+
+started roslaunch server http://rosrider:42365/
+
+SUMMARY
+========
+
+PARAMETERS
+ * /diff_drive_go_to_goal/angular_tolerance: 0.1
+ * /diff_drive_go_to_goal/forwardMovementOnly: False
+ * /diff_drive_go_to_goal/kA: 1.0
+ * /diff_drive_go_to_goal/kB: -0.8
+ * /diff_drive_go_to_goal/kP: 0.5
+ * /diff_drive_go_to_goal/linear_tolerance: 0.1
+ * /diff_drive_go_to_goal/max_angular_speed: 3.14
+ * /diff_drive_go_to_goal/max_linear_speed: 0.25
+ * /diff_drive_go_to_goal/min_angular_speed: 1.57
+ * /diff_drive_go_to_goal/min_linear_speed: 0.1
+ * /diff_drive_go_to_goal/rate: 20
+ * /joint_state_publisher/rate: 20.0
+ * /joint_state_publisher/source_list: ['wheel_states']
+ * /joint_state_publisher/use_gui: False
+ * /joy_node/autorepeat_rate: 20
+ * /joy_node/deadzone: 0.2
+ * /joy_node/dev: /dev/input/js0
+ * /left_wheel/controller/Kd: 0.02
+ * /left_wheel/controller/Ki: 3.2
+ * /left_wheel/controller/Kp: 4.8
+ * /left_wheel/controller/lower_limit: -1023
+ * /left_wheel/controller/max_loop_frequency: 50.0
+ * /left_wheel/controller/min_loop_frequency: 10.0
+ * /left_wheel/controller/setpoint_timeout: 0.1
+ * /left_wheel/controller/upper_limit: 1023
+ * /left_wheel/controller/windup_limit: 1023
+ * /right_wheel/controller/Kd: 0.02
+ * /right_wheel/controller/Ki: 3.2
+ * /right_wheel/controller/Kp: 4.8
+ * /right_wheel/controller/lower_limit: -1023
+ * /right_wheel/controller/max_loop_frequency: 50.0
+ * /right_wheel/controller/min_loop_frequency: 10.0
+ * /right_wheel/controller/setpoint_timeout: 0.1
+ * /right_wheel/controller/upper_limit: 1023
+ * /right_wheel/controller/windup_limit: 1023
+ * /robot_description: <?xml version="1....
+ * /robot_state_publisher/publish_frequency: 20.0
+ * /rosdistro: noetic
+ * /rosrider/params/base_width: 0.1
+ * /rosrider/params/bat_volts_high: 14.4
+ * /rosrider/params/bat_volts_low: 6.0
+ * /rosrider/params/config_flags: 48
+ * /rosrider/params/encoder_ppr: 12
+ * /rosrider/params/gear_ratio: 380
+ * /rosrider/params/left_deadzone: 64
+ * /rosrider/params/main_amp_limit: 3.6
+ * /rosrider/params/max_idle_seconds: 1800
+ * /rosrider/params/max_rpm: 90.0
+ * /rosrider/params/mt_amp_limit: 1.2
+ * /rosrider/params/right_deadzone: 64
+ * /rosrider/params/update_rate: 10
+ * /rosrider/params/wheel_dia: 0.06
+ * /rosversion: 1.15.9
+ * /serial_node_rosrider/baud: 230400
+ * /serial_node_rosrider/port: /dev/ttyACM0
+ * /teleop_twist_joy/axis_angular: 3
+ * /teleop_twist_joy/axis_linear: 1
+ * /teleop_twist_joy/enable_button: 4
+ * /teleop_twist_joy/enable_turbo_button: 5
+ * /teleop_twist_joy/scale_angular: 1.0
+ * /teleop_twist_joy/scale_linear: 0.2
+ * /teleop_twist_joy/scale_linear_turbo: 0.25
+
+NODES
+  /
+    controller (rosrider_diff_drive/diff_drive_controller)
+    diff_drive_go_to_goal (rosrider_diff_drive/diff_drive_go_to_goal)
+    joint_state_publisher (joint_state_publisher/joint_state_publisher)
+    joy_node (joy/joy_node)
+    map_to_odom (tf/static_transform_publisher)
+    odom_publisher (rosrider_diff_drive/diff_drive_odometry)
+    robot_state_publisher (robot_state_publisher/robot_state_publisher)
+    serial_node_rosrider (rosserial_python/serial_node.py)
+    teleop_twist_joy (teleop_twist_joy/teleop_node)
+  /left_wheel/
+    controller (pid/controller)
+  /right_wheel/
+    controller (pid/controller)
+
+ROS_MASTER_URI=http://localhost:11311
+
+process[map_to_odom-1]: started with pid [9427]
+process[serial_node_rosrider-2]: started with pid [9428]
+process[left_wheel/controller-3]: started with pid [9429]
+process[right_wheel/controller-4]: started with pid [9430]
+process[robot_state_publisher-5]: started with pid [9436]
+process[joint_state_publisher-6]: started with pid [9441]
+process[controller-7]: started with pid [9447]
+process[odom_publisher-8]: started with pid [9449]
+
+PID PARAMETERS
+-----------------------------------------
+Kp: 4.8,  Ki: 3.2,  Kd: 0.02
+LPF cutoff frequency: 1/4 of sampling rate
+pid node name: /left_wheel/controller
+Name of topic from controller: control_effort
+Name of topic from the plant: state
+Name of setpoint topic: setpoint
+Integral-windup limit: 1023
+Saturation limits: 1023/-1023
+-----------------------------------------
+process[diff_drive_go_to_goal-9]: started with pid [9451]
+process[joy_node-10]: started with pid [9455]
+
+PID PARAMETERS
+-----------------------------------------
+Kp: 4.8,  Ki: 3.2,  Kd: 0.02
+LPF cutoff frequency: 1/4 of sampling rate
+pid node name: /right_wheel/controller
+Name of topic from controller: control_effort
+Name of topic from the plant: state
+Name of setpoint topic: setpoint
+Integral-windup limit: 1023
+Saturation limits: 1023/-1023
+-----------------------------------------
+process[teleop_twist_joy-11]: started with pid [9457]
+[ WARN] [1612801495.133009742]: Couldn't set gain on joystick force feedback: Bad file descriptor
+[INFO] [1612801495.248801]: ROS Serial Python Node
+[INFO] [1612801495.252136]: Connecting to /dev/ttyACM0 at 230400 baud
+[INFO] [1612801495.264024]: /controller started
+[INFO] [1612801495.371120]: /odom_publisher started
+[INFO] [1612801495.426412]: /diff_drive_go_to_goal started
+[INFO] [1612801497.356646]: Requesting topics...
+[INFO] [1612801497.371673]: Note: publish buffer size is 512 bytes
+[INFO] [1612801497.381934]: Setup service server on rosrider/sysctl [rosrider/SysCtrlService]
+[INFO] [1612801497.390238]: Setup service server on rosrider/led_emitter [rosrider/LedService]
+[INFO] [1612801497.398992]: Setup publisher on left_wheel/state [std_msgs/Float64]
+[INFO] [1612801497.407574]: Setup publisher on right_wheel/state [std_msgs/Float64]
+[INFO] [1612801497.417388]: Setup publisher on left_wheel/position [std_msgs/Int32]
+[INFO] [1612801497.426622]: Setup publisher on right_wheel/position [std_msgs/Int32]
+[INFO] [1612801497.436331]: Setup publisher on /rosrider/diagnostics [rosrider/Diagnostics]
+[INFO] [1612801497.440567]: Note: subscribe buffer size is 512 bytes
+[INFO] [1612801497.449885]: Setup subscriber on left_wheel/control_effort [std_msgs/Float64]
+[INFO] [1612801497.461042]: Setup subscriber on right_wheel/control_effort [std_msgs/Float64]
+[INFO] [1612801497.466083]: default_status: 1
+[INFO] [1612801497.470038]: update_rate: 10
+[INFO] [1612801497.473873]: encoder_ppr: 12
+[INFO] [1612801497.476677]: gear_ratio: 380
+[INFO] [1612801497.478958]: wheel_dia: 0.060
+[INFO] [1612801497.481240]: base_width: 0.100
+[INFO] [1612801497.483615]: main_amp_limit: 3.60
+[INFO] [1612801497.486067]: mt_amp_limit: 1.20
+[INFO] [1612801497.488479]: bat_volts_high: 14.4
+[INFO] [1612801497.490908]: bat_volts_low: 6.0
+[INFO] [1612801497.493405]: max_rpm: 90.0
+[INFO] [1612801497.495897]: left_swap: false
+[INFO] [1612801497.502989]: right_swap: false
+[INFO] [1612801497.513355]: left_reverse: false
+[INFO] [1612801497.523752]: right_reverse: false
+[INFO] [1612801497.533129]: left_enc_ab: true
+[INFO] [1612801497.543622]: right_enc_ab: true
+[INFO] [1612801497.554152]: left_deadzone: 0
+[INFO] [1612801497.564126]: right_deadzone: 0
+[INFO] [1612801497.574812]: max_idle_seconds: 1800
+[INFO] [1612801497.583913]: config_flags: 48
+[INFO] [1612801497.595278]: power_status: 0
+[INFO] [1612801497.604690]: motor_status: 48
+[INFO] [1612801497.614930]: system_status: 0
+[ INFO] [1612801497.636661257]: prev_time is 0, doing nothing
+[ INFO] [1612801497.714865559]: prev_time is 0, doing nothing
+[ WARN] [1612801497.813359313]: Setpoint message timed out, will stop publising control_effort_messages
+[ WARN] [1612801497.814651619]: Setpoint message timed out, will stop publising control_effort_messages

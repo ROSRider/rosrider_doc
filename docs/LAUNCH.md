@@ -13,26 +13,53 @@ Execute the following commands:
     roscd rosrider/launch
     roslaunch/robot.launch
 
-Will output:
+To see output, click [here](robot_launch.txt)
 
-```console
-CAPTURE output here
-```
-
-List topics by typing the following command:
+In another window, list topics by typing the following command:
 
     rostopic list
 
 ```console
-CAPTURE list of topics
+/cmd_vel
+/diff_drive_go_to_goal/cancel
+/diff_drive_go_to_goal/distance_to_goal
+/diff_drive_go_to_goal/feedback
+/diff_drive_go_to_goal/goal
+/diff_drive_go_to_goal/result
+/diff_drive_go_to_goal/status
+/goal_achieved
+/initialpose
+/joint_states
+/joy
+/left_wheel/control_effort
+/left_wheel/pid_debug
+/left_wheel/pid_enable
+/left_wheel/position
+/left_wheel/setpoint
+/left_wheel/state
+/move_base_simple/goal
+/odom
+/right_wheel/control_effort
+/right_wheel/pid_debug
+/right_wheel/pid_enable
+/right_wheel/position
+/right_wheel/setpoint
+/right_wheel/state
+/rosrider/diagnostics
+/tf
+/tf_static
+/wheel_states
 ```
 
 List services by typing the following command:
 
     rosservice list
 
+You should see the list of services, which includes the services below:
+
 ```console
-CAPTURE list of services
+/rosrider/led_emitter
+/rosrider/sysctl
 ```
 
 ### robot_cam.launch
