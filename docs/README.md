@@ -1,7 +1,9 @@
-[Getting Started with the ROSRider Board](01_START.md)
+[Getting Started with the ROSRider Board](START.md)
 
-[Installing the ROSRider Software](02_SOFTWARE.md)
+[Installing the ROSRider Software](SOFTWARE.md)
 
-[Parameters Explained](03_PARAMS.md)
+[Parameters](PARAMS.md)
 
-[Launching ROSRider](04_LAUNCH.md)
+[Launching ROSRider](LAUNCH.md)
+
+[Services](SERVICES.md)

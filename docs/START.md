@@ -24,7 +24,7 @@ To test that everything is setup correctly, execute:
 
     roscd rosrider
 
-If the above command changes directory to ```~/catkin_ws/src/rosrider``` and if you received no errors in the previous ```catkin_make``` command, the ROSRider package is setup correctly.  
+If the above command changes directory to `~/catkin_ws/src/rosrider` and if you received no errors in the previous `catkin_make` command, the ROSRider package is setup correctly.  
 
 
 ### Testing
@@ -49,7 +49,7 @@ The hard limits on the suply voltage at startup are 6.0V minimum and 14.4V maxim
 | Flashing 1 sec    | Power failure, device will go to sleep mode in 30 sec |
 | Flipping on-off   | Connected to ROS |
 
->Notice: if the devices goes in sleep mode, you have to press ```WAKE``` button.
+>Notice: if the devices goes in sleep mode, you have to press `WAKE` button.
 
 Open A Terminal Window, and execute the following command:
 
@@ -60,7 +60,7 @@ On Another Terminal Window, and execute the following commands:
     roscd rosrider/config
     rosparam load rosrider.yaml
 
-These commands will load default parameters from [rosrider.yaml](03_PARAMS.md) file.
+These commands will load default parameters from [rosrider.yaml](PARAMS.md) file.
 
 To connect to ROSRider board, execute the following command:
 
@@ -129,7 +129,7 @@ List ROS services by executing the following command:
 
     rosservice list
 
-It will list services provided by ROSRider board, which are explained [here](07_SERVICES.md) in detail.
+It will list services provided by ROSRider board, which are explained [here](SERVICES.md) in detail.
 
 ```console
 /rosrider/sysctl
@@ -176,7 +176,7 @@ crw-rw-rw- 1 root root 166, 0 Feb  8 13:41 /dev/ttyACM0
 
 You have to make sure that your user has the correct privileges to access the serial port. Here above the serial port is set 666, so each user can access it.
 
-The device could be in sleeping mode. Press wake button, if the led does not indicate startup, press reset. ```/dev/ttyACM0``` should appear.
+The device could be in sleeping mode. Press wake button, if the led does not indicate startup, press reset. `/dev/ttyACM0` should appear.
 
 If the led on the board is blinking, then going to hibernate, your battery voltages are low, and you need to recharge.
 

@@ -1,6 +1,6 @@
 ### rosrider.yaml
 
->Notice: You have to finish [Getting Started](01_START.md) and [Installing the ROSRider Software](02_SOFTWARE.md) before following instructions on this document.
+>Notice: You have to finish [Getting Started](START.md) and [Installing the ROSRider Software](SOFTWARE.md) before following instructions on this document.
 
 Here is the ROSRider parameter file: [rosrider.yaml](https://gitlab.com/ROSRider/rosrider/-/blob/master/config/rosrider.yaml)
 
@@ -57,7 +57,7 @@ Instructions for setting / verifying / tuning all parameters given below.
 
 `config_flags` are applied when configuring hardware initially. It configures motor polarity, encoder direction, and encoder type.
 
-Consult to [PROCEDURES](100_PROCEDURES.md) section, to verify that the `config_flags` are set correctly.
+Consult to [PROCEDURES](PROCEDURES.md) section, to verify that the `config_flags` are set correctly.
 
 To reverse a motor direction, set the corresponding reverse bit. Given positive input, motor should roll robot forward.
 
