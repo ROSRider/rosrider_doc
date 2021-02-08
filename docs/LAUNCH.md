@@ -121,9 +121,7 @@ You should see a window pop up, and display the image that the robot captures li
 
 ### robot_ekf.launch
 
->Notice: In order to launch the `robot_ekf.launch` you need imu sensor attached and configured to your robot.
-
-### TODO: fximu config file exists and configured, and calibrated.
+>Notice: In order to launch the `robot_ekf.launch` you need an imu sensor attached and configured to your robot. The instructions and launch files are for FXIMU2. Please consult to FXIMU2 documentation for more information.
 
 Execute the following commands:
 
