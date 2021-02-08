@@ -148,7 +148,7 @@ RVIZ program should pop up, showing a model of a ROSRider robot. ROSRider's posi
 
 You should see a robot like in the image below:
 
-[![RVIZ](../img/rviz_remote.png)](https://www.youtube.com/watch?v=1SKq0etHaYM "RVIZ Demo")
+[![RVIZ](https://raw.githubusercontent.com/ROSRider/rosrider_doc/main/img/rviz_remote.png)](https://www.youtube.com/watch?v=1SKq0etHaYM "RVIZ Demo")
 
 Click on the image above to see a video of ROSRider executing a `2D Nav Goal` given by RVIZ.
 
