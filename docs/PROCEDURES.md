@@ -1,5 +1,3 @@
-### TODO: exp
-
 After starting roscore on a Terminal, Open Another Terminal Window, and execute the following commands:
 
     roscd rosrider/config
@@ -9,42 +7,47 @@ After starting roscore on a Terminal, Open Another Terminal Window, and execute 
 It should generate some output like:
 
 ```console
-[INFO] [1611423598.123713]: ROS Serial Python Node
-[INFO] [1611423598.137211]: Connecting to /dev/ttyACM0 at 230400 baud
-[INFO] [1611423600.246322]: Requesting topics...
-[INFO] [1611423600.258677]: Note: publish buffer size is 512 bytes
-[INFO] [1611423600.260958]: Setup service server on rosrider/sysctl [rosrider/SysCtrlService]
-[INFO] [1611423600.267216]: Setup service server on rosrider/led_emitter [rosrider/LedService]
-[INFO] [1611423600.276191]: Setup publisher on left_wheel/state [std_msgs/Float64]
-[INFO] [1611423600.284655]: Setup publisher on right_wheel/state [std_msgs/Float64]
-[INFO] [1611423600.292984]: Setup publisher on left_wheel/position [std_msgs/Int32]
-[INFO] [1611423600.301249]: Setup publisher on right_wheel/position [std_msgs/Int32]
-[INFO] [1611423600.310946]: Setup publisher on /rosrider/diagnostics [rosrider/Diagnostics]
-[INFO] [1611423600.316371]: Note: subscribe buffer size is 512 bytes
-[INFO] [1611423600.328566]: Setup subscriber on left_wheel/control_effort [std_msgs/Float64]
-[INFO] [1611423600.341352]: Setup subscriber on right_wheel/control_effort [std_msgs/Float64]
-[INFO] [1611423600.346675]: default_status: 0
-[INFO] [1611423600.357331]: update_rate: 10
-[INFO] [1611423600.377670]: encoder_ppr: 12
-[INFO] [1611423600.399141]: gear_ratio: 380
-[INFO] [1611423600.418785]: wheel_dia: 0.060
-[INFO] [1611423600.439189]: base_width: 0.100
-[INFO] [1611423600.460559]: main_amp_limit: 3.60
-[INFO] [1611423600.480709]: mt_amp_limit: 1.20
-[INFO] [1611423600.502383]: bat_volts_high: 14.4
-[INFO] [1611423600.523017]: bat_volts_low: 6.0
-[INFO] [1611423600.543203]: max_rpm: 90.0
-[INFO] [1611423600.563336]: left_swap: false
-[INFO] [1611423600.583929]: right_swap: false
-[INFO] [1611423600.605330]: left_reverse: false
-[INFO] [1611423600.625641]: right_reverse: false
-[INFO] [1611423600.646198]: max_idle_seconds: 1800
-[INFO] [1611423600.656378]: power_status: 0
-[INFO] [1611423600.666385]: motor_status: 48
-[INFO] [1611423600.677633]: system_status: 0
+[INFO] [1612790844.703436]: ROS Serial Python Node
+[INFO] [1612790844.717859]: Connecting to /dev/ttyACM0 at 230400 baud
+[INFO] [1612790846.829189]: Requesting topics...
+[INFO] [1612790846.833376]: Note: publish buffer size is 512 bytes
+[INFO] [1612790846.836264]: Setup service server on rosrider/sysctl [rosrider/SysCtrlService]
+[INFO] [1612790846.839602]: Setup service server on rosrider/led_emitter [rosrider/LedService]
+[INFO] [1612790846.843117]: Setup publisher on left_wheel/state [std_msgs/Float64]
+[INFO] [1612790846.846694]: Setup publisher on right_wheel/state [std_msgs/Float64]
+[INFO] [1612790846.849855]: Setup publisher on left_wheel/position [std_msgs/Int32]
+[INFO] [1612790846.852699]: Setup publisher on right_wheel/position [std_msgs/Int32]
+[INFO] [1612790846.855704]: Setup publisher on /rosrider/diagnostics [rosrider/Diagnostics]
+[INFO] [1612790846.857871]: Note: subscribe buffer size is 512 bytes
+[INFO] [1612790846.862581]: Setup subscriber on left_wheel/control_effort [std_msgs/Float64]
+[INFO] [1612790846.867138]: Setup subscriber on right_wheel/control_effort [std_msgs/Float64]
+[INFO] [1612790846.869244]: default_status: 0
+[INFO] [1612790847.162944]: update_rate: 10
+[INFO] [1612790847.172187]: encoder_ppr: 12
+[INFO] [1612790847.182271]: gear_ratio: 380
+[INFO] [1612790847.192537]: wheel_dia: 0.060
+[INFO] [1612790847.202517]: base_width: 0.100
+[INFO] [1612790847.212537]: main_amp_limit: 3.60
+[INFO] [1612790847.222696]: mt_amp_limit: 1.20
+[INFO] [1612790847.233334]: bat_volts_high: 14.4
+[INFO] [1612790847.243479]: bat_volts_low: 6.0
+[INFO] [1612790847.253543]: max_rpm: 90.0
+[INFO] [1612790847.263967]: left_swap: false
+[INFO] [1612790847.274171]: right_swap: false
+[INFO] [1612790847.284146]: left_reverse: false
+[INFO] [1612790847.294196]: right_reverse: false
+[INFO] [1612790847.304335]: left_enc_ab: true
+[INFO] [1612790847.314304]: right_enc_ab: true
+[INFO] [1612790847.325102]: left_deadzone: 64
+[INFO] [1612790847.334513]: right_deadzone: 64
+[INFO] [1612790847.344739]: max_idle_seconds: 1800
+[INFO] [1612790847.355036]: config_flags: 48
+[INFO] [1612790847.365300]: power_status: 0
+[INFO] [1612790847.374551]: motor_status: 48
+[INFO] [1612790847.384761]: system_status: 0
 ```
 
->***Make sure your robot / setup is in a jack, i.e. the wheels do not touch the ground.***
+**Make sure your robot / setup is in a jack, i.e. the wheels do not touch the ground.**
 
 
 ### Verification of motor direction
@@ -142,6 +145,10 @@ Put it on rqt view and show some examples
 Put it on rqt view, and test stalls.
 
 
-### pid calibration with dynamic reconfigure tutotial, explain pid params dont have to do with board
+### PID Calibration 
+
+[TODO: with dynamic reconfigure, rqt_plot key variables]  
+[TODO: explain how pid works in the system, and not in the board]
+
 
 
