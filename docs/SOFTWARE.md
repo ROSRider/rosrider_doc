@@ -38,10 +38,11 @@ You can use Gazebo to run ROSRider on your computer.
 
 ### Installing IMAGE Package
 
+TBD
+
 ### Installing FXIMU
 
-
-### TODO: examples, should be on different package, linked rosrider_description, can have its own readme
+TBD
 
 
 

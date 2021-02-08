@@ -6,6 +6,8 @@
 
 [Launching ROSRider](LAUNCH.md)
 
+[Subscribers and Publishers](TOPICS.md)
+
 [Services](SERVICES.md)
 
 [Diagnostics](DIAGS.md)

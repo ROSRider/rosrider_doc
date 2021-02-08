@@ -1,14 +1,10 @@
-### Launching ROSRider
+`robot.launch` launches the ROSRider board, differential drive controller, goal controller, odometry node, and is the basic robot bringup file.
 
-```robot.launch``` launches the ROSRider board, differential drive controller, goal controller, odometry node, and is the basic robot bringup file.
+`robot_cam.launch` is robot.launch, but with camera. You have to have a camera attached to your robot and configured.
 
-```robot_cam.launch``` is robot.launch, but with camera.
+`robot_ekf.launch` is robot.launch, but with fximu, and robot localization package configured. You need an IMU for this to work. Current configuration is for FXIMU.
 
-```robot_ekf.launch``` is robot.launch, but with fximu, and robot localization package configured. You need an IMU for this to work. Current configuration is for FXIMU.
-
-```robot_ekf_cam_launch``` is robot_ekf.launch, but with camera configured.
-
-For camera to work, complete instructions on [IMAGE](IMAGE.md) first.
+`robot_ekf_cam_launch` is robot_ekf.launch, but with camera configured.
 
 ### robot.launch
 
@@ -39,19 +35,11 @@ List services by typing the following command:
 CAPTURE list of services
 ```
 
----
 ### robot_cam.launch
 
 ### robot_ekf.launch
 
-### robot_ekf_cam.launch
+### remote.launch
 
-### Other Topics and Services
 
-[TODO: list and explain any other topics and services provided by the system]
 
-[TODO: Odometry explained, using RVIZ, make a chapter on that]
-
-[TODO: delete 05_TOPICS and explain it here]
-
-[TODO: make services single file]

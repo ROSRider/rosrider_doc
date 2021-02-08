@@ -5,6 +5,7 @@ pages:
 - Installing the ROSRider Software: SOFTWARE.md
 - Parameters: PARAMS.md
 - Launching ROSRider: LAUNCH.md
+- Subscribers and Publishers: TOPICS.md
 - Services: SERVICES.md
 - Diagnostics: DIAGS.md
 - RVIZ: RVIZ.md

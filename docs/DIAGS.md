@@ -1,53 +1,50 @@
-### Diagnostics System
-
-This is the Diagnostics Message, published at ```rosrider/diagnostics``` each update.
+This is the Diagnostics Message, published at `rosrider/diagnostics` each update.
 
 ```console
 float32 cs_left
 float32 cs_right
-
+#
 float32 bus_voltage
 float32 bus_current
-
+#
 uint8 config_flags
-
+#
 uint8 power_status
 uint8 motor_status
 uint8 system_status
-
+#
 bool drivers_disabled
 float32 dt
 ```
 
----
 
-| Field             | Description         | Unit | Datatype |
-| ----------------- | ------------------- | ---- | -------- |
-| cs_left           | Current Sense Left  | Amp  | Float    |
-| cs_right          | Current Sense Right | Amp  | Float    |
-| bus_voltage       | Bus Voltage         | Amp  | Float    |
-| bus_current       | Bus Current         | Amp  | Float    |
-| config_flags      | Config Flag Bits    |      | uint8_t  |
-| power_status      | Power Status Bits   |      | uint8_t  |
-| motor_status      | Motor Status Bits   |      | uint8_t  |
-| system_status     | System Status Bits  |      | uint8_t  |
-| drivers_disabled  | Drivers Disabled    |      | bool     |
-| dt                | Loop Time           | Sec  | Float    |
+| Field              | Description         | Unit | Datatype |
+| ------------------ | ------------------- | ---- | -------- |
+| cs\_left           | Current Sense Left  | Amp  | Float    |
+| cs\_right          | Current Sense Right | Amp  | Float    |
+| bus\_voltage       | Bus Voltage         | Amp  | Float    |
+| bus\_current       | Bus Current         | Amp  | Float    |
+| config\_flags      | Config Flag Bits    |      | uint8_t  |
+| power\_status      | Power Status Bits   |      | uint8_t  |
+| motor\_status      | Motor Status Bits   |      | uint8_t  |
+| system\_status     | System Status Bits  |      | uint8_t  |
+| drivers\_disabled  | Drivers Disabled    |      | bool     |
+| dt                 | Loop Time           | Sec  | Float    |
 
 
-### Current Sense 
+### current sense 
 
-```cs_left``` and ```cs_right``` returns the current used by each motor in amps. This might be useful to develop an effort controller interface.
+`cs_left` and `cs_right` returns the current used by each motor in amps. This might be useful to develop an effort controller interface.
 
 Depending on the motor phase, biases might exist for the current sense.
 
-### Bus Voltage
+### bus voltage
 
 Returns the System Bus Voltage in Volts. You can plot this variable with rqt_plot, and observe its change when the motors are powered.
 
 >Notice: the bus voltage measurement can be biased.
 
-### Bus Current
+### bus current
 
 Returns the total current used by the ROSRider board. When the motors, and external leds are off, the system uses around 0.07 amperes of power.
 
@@ -64,9 +61,6 @@ Loop Time. It should equal 1 / update_rate.
 | left encoder ab | right encoder ab | right encoder swap | left encoder swap | right motor reversed | left motor reversed |
 
 >Notice: config_flags are applied when configuring hardware initially
-> 
-# TODO: config_flags is not even diag, needs a new page, explanation on PARAMS.md maybe
-# TODO: params.md needs an update as some bools are depreciated
 
 ### power_status
 
@@ -90,6 +84,8 @@ If the below conditions occur in the motor driver, the fault bit is on.
 - over temperature shutdown
 - under voltage lockdown
 - over current protection
+
+To reset a shutdown, issue a `soft_reset` using the [SYSCTL](SERVICES.md) service. 
 
 ### system_status
 

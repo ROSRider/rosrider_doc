@@ -1,5 +1,11 @@
 ### How to launch RVIZ with ROSRider
 
+### Odometry explained here
+
+### Goal controller as well
+
+### with videos?
+
 rviz -d ...
 
 pictures, etc.
