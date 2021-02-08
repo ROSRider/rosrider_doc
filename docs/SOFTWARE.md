@@ -22,7 +22,7 @@ The explanation of the packages are as follows:
 
 `rosrider_teleop` contains configuration files to use the robot with a gamepad. (Logitech F710)
 
-``rosrider_examples` contains example programs, that use odometry.
+`rosrider_examples` contains example programs, that use odometry.
 
 - move_tf : moves the robot to point x, y
 - loop_tf : loops the robot following a trajectory
