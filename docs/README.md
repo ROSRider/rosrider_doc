@@ -1,4 +1,4 @@
-![ROSRider](https://raw.githubusercontent.com/ROSRider/rosrider_doc/main/img/rosrider_v1e_diag_md.png)
+![ROSRider](https://raw.githubusercontent.com/ROSRider/rosrider_doc/main/img/rosrider_v1e_diag.png)
 
 [Getting Started with the ROSRider Board](START.md)
 
