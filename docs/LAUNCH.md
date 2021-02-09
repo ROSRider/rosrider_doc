@@ -174,9 +174,11 @@ roslaunch/remote.launch
 
 RVIZ program should pop up, showing a model of a ROSRider robot. ROSRider's position, heading, and wheel joint angles will be depicted on `RVIZ`. Also, if the IMU and EKF is deployed, then if the robot is turned maually, it would also be depicted in `RVIZ`
 
+>Click on the image below to see a video of ROSRider executing a `2D Nav Goal` given by RVIZ.
+>
+>Click [here](https://raw.githubusercontent.com/ROSRider/rosrider_doc/main/webm/goal.webm) for screencast.
+
 You should see a robot like in the image below:
 
 [![RVIZ](https://raw.githubusercontent.com/ROSRider/rosrider_doc/main/img/rviz_remote.png)](https://www.youtube.com/watch?v=1SKq0etHaYM "RVIZ Demo")
-
-Click on the image above to see a video of ROSRider executing a `2D Nav Goal` given by RVIZ.
 
