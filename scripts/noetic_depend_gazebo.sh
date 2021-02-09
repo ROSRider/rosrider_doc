@@ -1,1 +1,5 @@
-/home/can/Documents/LXD/noetic_depend_gazebo.sh
+#!/bin/bash
+#
+sudo apt install ros-noetic-gazebo-ros -y
+sudo apt install ros-noetic-gazebo-ros-control -y
+sudo apt install ros-noetic-gazebo-ros-pkgs -y
