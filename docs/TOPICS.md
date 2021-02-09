@@ -1,6 +1,15 @@
-Besides subscribers and publishers created natively by the ROSRider board, `robot.launch` brings up the following subscribers and publishers:
+When `robot.launch` is launched, the following happens:
 
-[TODO: a little more detail on what robot.launch launches]
+- connect to ROSRider for topics provided natively by ROSRider
+- launch `pid_controller`
+- launch `diff_drive_controller`
+- launch `diff_drive_go_to_goal`
+- launch `odometry_publisher`
+- launch `teleop_twist_joy`
+- urdf model loaded
+
+
+Besides topics provided natively by the ROSRider board, `robot.launch` brings up the following subscribers and publishers:
 
 ### Subscribers
 
@@ -72,7 +81,6 @@ This usually happens when using the `2D Nav Goal` buttin in `RVIZ`.
 Click on the `2D Nav Goal` button on `RVIZ`, select a position and heading on the screen. The robot will actually move to that point.
 
 
-
 ### Publishers
 
 
@@ -107,23 +115,130 @@ buttons: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
 ```
 
-Move the sticks around to see axes change in stream.
+Move the sticks around to see axes change in stream. `joy` is published by `teleop_twist_joy` node.
 
 **/odom**
 
-**/joint_states**
+`/odom` publishes `Odometry` messages which contains robots position, orientation, and measured linear, angular speeds as well as covariances.
 
-**/wheel_states**
+Lets see an actual `Odometry` message
 
-**/diff\_drive\_go\_to\_goal/distance_to_goal**
+```console
+rostopic echo /odom
+```
+
+You will see a strean of:
+
+```console
+header: 
+  seq: 85438
+  stamp: 
+    secs: 1612868315
+    nsecs: 616346359
+  frame_id: "odom"
+child_frame_id: "base_footprint"
+pose: 
+  pose: 
+    position: 
+      x: -0.1385688848064156
+      y: 0.03605075816714569
+      z: 0.0
+    orientation: 
+      x: -0.0
+      y: 0.0
+      z: 0.2938340462238658
+      w: -0.9558564501428607
+  covariance: [0.02, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.02, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1000000000000.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1000000000000.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1000000000000.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.05]
+twist: 
+  twist: 
+    linear: 
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    angular: 
+      x: 0.0
+      y: 0.0
+      z: 0.0
+  covariance: [0.01, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.01, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1000000000.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1000000000.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1000000000.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.02]
+```
+
+`pose` part contains `position` and the `orientation` of the robot. In a planar robot, we only have `x`, `y` and `z` is always zero.
+
+the type of `orientation` is a `quarternion` which denote the yaw or theta of the robot for our application.
+
+`twist` contains a `twist` object, just like we send to `/cmd_vel` to make the robot move. But this time, in the odometry message, it is the measured linear and angular speed from encoders. 
+
+If you were to send a linear speed of 0.1m/s to the `/cmd_vel`, the `diff_drive_controller` would try to match the rpms for the required linear speed, `odometry_publisher` would publish the actual measured speed in its `Twist`. You would observe the measured speed.
+
+For other ROS packages such as `robot-localization` to work, your measured linear and angular speeds must be matching with real measured units in `m/s` and `rad/s`, and your `covariances` must be calculated correctly. The above covariances work with the ROSRider system.
+
+**/joint\_states, /wheel\_states**
+
+These to topics depict wheel position in PI, generally used for visualization with `RVIZ`
+
+Execute the following command:
+
+```console
+rostopic echo /wheel_states
+```
+
+And you will see:
+
+```console
+header: 
+  seq: 92460
+  stamp: 
+    secs: 1612869020
+    nsecs: 916299104
+  frame_id: ''
+name: 
+  - wheel_left_joint
+  - wheel_right_joint
+position: [5.5708153940629535, 4.925962165168206]
+velocity: []
+effort: []
+```
+
+As seen, it contains the positions of each axes, in normalized PI
+
+`/wheel_states` is published by `odometry_controller` and `/joint_states` is republished by `joint_state_publisher`
+
+**/diff\_drive\_go\_to\_goal/distance\_to\_goal**
+
+While the `diff_drive_go_to_goal` is executing a goal, it will publish distance to goal in meters, in this topic. It is useful for debugging, also developing your own programs.
 
 **/diff\_drive\_go\_to\_goal/result**
 
+After the `diff_drive_go_to_goal` is executes a goal, it will publish result in this topic. 
+
 **/diff\_drive\_go\_to\_goal/status**
+
+While the `diff_drive_go_to_goal` is executing a goal, it will publish status here.
 
 **/goal_achieved**
 
-[TODO: rosnode list tip here]
+This is the simpler version to use with `/move_base_simple/goal`
+
+Returns `True` once the goal is executed.
+
+**Example Python Code**
+
+```console
+# send goal, and wait
+self.action_client.send_goal(self.action_goal)
+
+wait = self.action_client.wait_for_result()
+
+if not wait:
+    rospy.signal_shutdown('action server not available!')
+
+if self.action_client.get_result().success:
+    self.recovery_mode = False
+```
+
+The above code is an excerpt from `visual_pace.py` illustrating submitting goals to controller, and waiting for execution.
+
+>TIP: use `rosnode list` to list nodes running, and `rosnode info /controller` to get information about a node.
 
 
 
