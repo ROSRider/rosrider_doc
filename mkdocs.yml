@@ -12,6 +12,7 @@ pages:
 - Services: SERVICES.md
 - Diagnostics: DIAGS.md
 - Examples: EXAMPLES.md
+- EKF: EKF.md
 - Gazebo: GAZEBO.md
 - Calibration: CALIBRATION.md
 - Procedures: PROCEDURES.md
