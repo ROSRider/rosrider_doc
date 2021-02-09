@@ -91,18 +91,12 @@ Follows a yellow line on background. When there is no more yellow line, the robo
 
 [TODO: explanation]
 
-[TODO: screen capture webm, find that also and put it in folder, add link to webm]
-
-
 To see a video of robot in operation, click the image below:
 
 [![Visual Pace](https://raw.githubusercontent.com/ROSRider/rosrider_doc/main/img/visual_pace_mov.png)](https://www.youtube.com/watch?v=i8jRJzGPu2k "Visual Pace")
 
 To see the ROS Console, while the robot is in operation, click the image below:
 
-[![Visual Pace Console](https://raw.githubusercontent.com/ROSRider/rosrider_doc/main/img/visual_pace_mov.png)](https://www.youtube.com/watch?v=MUS3nrNKr90 "Visual Pace Console")
+[![Visual Pace Console](https://raw.githubusercontent.com/ROSRider/rosrider_doc/main/img/visual_pace_console.png)](https://www.youtube.com/watch?v=MUS3nrNKr90 "Visual Pace Console")
 
-
-
-
-
+Click [here](https://raw.githubusercontent.com/ROSRider/rosrider_doc/main/webm/visual_pace.webm) for screencast.
