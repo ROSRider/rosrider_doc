@@ -34,11 +34,11 @@ You can use Gazebo to run ROSRider on your computer. This part is optional.
 
 ### Installing IMAGE Package
 
-This part is optional. TBD
+This part is optional. TODO
 
 ### Installing FXIMU
 
-This part is optional. TBD
+This part is optional. TODO
 
 
 

@@ -1,3 +1,5 @@
+![ROSRider]()
+
 [Getting Started with the ROSRider Board](START.md)
 
 [Installing the ROSRider Software](SOFTWARE.md)

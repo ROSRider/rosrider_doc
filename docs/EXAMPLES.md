@@ -79,7 +79,7 @@ To run the program, using default parameters execute the following commands:
     roscd rosrider_examples/nodes
     ./pace.py
 
-With default parameters, the pace.py progrma will make the robot go between `point(0,0)` and `point(2,0)`.
+With default parameters, the pace.py progrma will make the robot go between `point(0,0)` and `point(2,0)`
 
 This example uses `odometry` only. If you are using `EKF` please adjust goal controller to use `/odometry/filtered`instead of ``/odom`
 
