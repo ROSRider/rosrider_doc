@@ -129,8 +129,6 @@ To plot current sense from left and rigt driver type:
 rqt_plot /rosrider/diagnostics/cs_left /rosrider/diagnostics/cs_right
 ```
 
->Click on the image below to see a video of rqt_plot plotting the above variables.
->
->Click [here](https://raw.githubusercontent.com/ROSRider/rosrider_doc/main/webm/rqt_plot.webm) for screencast.
+Click on the image below to see a video of rqt_plot plotting the above variables. Click [here](https://raw.githubusercontent.com/ROSRider/rosrider_doc/main/webm/rqt_plot.webm) for screencast.
 
 [![rqt_plot](https://raw.githubusercontent.com/ROSRider/rosrider_doc/main/img/rqt_plot.png)](https://www.youtube.com/watch?v=kgWcXQgxFSU "rqt_plot demo")

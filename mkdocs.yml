@@ -10,7 +10,6 @@ pages:
     - 'Provided by ROS': TOPICS.md
 - Services: SERVICES.md
 - Diagnostics: DIAGS.md
-- RVIZ: RVIZ.md
 - Examples: EXAMPLES.md
 - Gazebo: GAZEBO.md
 - Calibration: CALIBRATION.md
