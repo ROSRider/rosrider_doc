@@ -97,4 +97,34 @@ To reset a shutdown, issue a `soft_reset` using the [SYSCTL](SERVICES.md) servic
 > 
 >If *eeprom_init_error* occurs, system will continue to work requesting parameters. If parameters not found, it will result in a *error while loading parameters* which will disable motor drivers.
 
-[TODO: rqt_plot examples]
+---
+
+**Use rqt_plot to plot /rosrider/diagnostics variables**
+
+Open a terminal window and type:
+
+```console
+rqt_plot rqt_plot /rosrider/diagnostics/bus_voltage
+```
+
+Will plot bus voltage. Use buttons provided by `rqt_plot` to change speed, range, etc.
+
+To plot bus current type:
+
+```console
+rqt_plot rqt_plot /rosrider/diagnostics/bus_current
+```
+
+To plot execution time per update type:
+
+```console
+rqt_plot rqt_plot /rosrider/diagnostics/dt
+```
+
+To plot current sense from left and rigt driver type:
+
+```console
+rqt_plot /rosrider/diagnostics/cs_left /rosrider/diagnostics/cs_right
+```
+
+[![rqt_plot](https://raw.githubusercontent.com/ROSRider/rosrider_doc/main/img/rqt_plot.png)](https://www.youtube.com/watch?v=kgWcXQgxFSU "rqt_plot demo")
