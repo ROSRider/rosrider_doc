@@ -89,7 +89,7 @@ Follows a yellow line on background. When there is no more yellow line, the robo
 
 >Notice: In order to launch the `robot_cam.launch` you need a camera attached and configured to your robot.
 
-[TODO: explanation]
+[TODO: explanation launch node parametrize node]
 
 To see a video of robot in operation, click the image below:
 
