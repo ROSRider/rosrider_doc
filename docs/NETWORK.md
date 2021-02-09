@@ -43,7 +43,7 @@ On the client it should point to the robot, and on the robot it should point to 
 
 ### ROS_HOSTNAME
 
- `ROS_HOSTNAME` tells ROS programs what is the name of the current node, so others could connect to it.
+ `ROS_HOSTNAME` tells ROS programs what is the name of the current node, so others could connect to.
 
 On the Laptop, add this to `~/.bashrc`
 
