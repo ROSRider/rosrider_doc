@@ -6,9 +6,6 @@ pages:
 - Parameters: PARAMS.md
 - Launching ROSRider: LAUNCH.md
 - Subscribers and Publishers: TOPICS.md
-	- testH
-		- testH1
-		- testH2
 - Services: SERVICES.md
 - Diagnostics: DIAGS.md
 - RVIZ: RVIZ.md
@@ -16,4 +13,7 @@ pages:
 - Calibration: CALIBRATION.md
 - Procedures: PROCEDURES.md
 - Network: NETWORK.md
+- About:
+   - 'License': 'SERVICES.md'
+   - 'Release Notes': 'NETWORK.md'
 theme: readthedocs
