@@ -77,14 +77,14 @@ Should return:
 
 There are two modes of failure.
 
-1. `rostopic list` returns topics, but `rostopic echo /odom` will not stream data
+>`rostopic list` returns topics, but `rostopic echo /odom` will not stream data
 
-	**REASON:** `ROS_MASTER_URI` is set correctly, but the client is unable to contact the `host:port` that publishes the `/odom`
+**REASON:** `ROS_MASTER_URI` is set correctly, but the client is unable to contact the `host:port` that publishes the `/odom`
 	
-	**SOLUTION:** Use `rostopic info /odom` to get information on which node publishes the `odom` at which `host:port`, and make sure that both hosts can communicate.
+**SOLUTION:** Use `rostopic info /odom` to get information on which node publishes the `odom` at which `host:port`, and make sure that both hosts can communicate.
+
+>`rostopic echo /odom` streams data, but `rostopic pub /topic` will not send to the robot.
 	
-2. `rostopic echo /odom` streams data, but `rostopic pub /topic` will not send to the robot.
+**REASON:**`ROS_MASTER_URI` is set correctly, but the `ROS_HOSTNAME` given could not be contacted by robot.
 	
-	**REASON:**`ROS_MASTER_URI` is set correctly, but the `ROS_HOSTNAME` given could not be contacted by robot.
-	
-	**SOLUTION:** Make sure `ROS_HOSTNAME` is set correctly, and make sure value given in `ROS_HOSTNAME` can be reached from robot.
+**SOLUTION:** Make sure `ROS_HOSTNAME` is set correctly, and make sure value given in `ROS_HOSTNAME` can be reached from robot.
