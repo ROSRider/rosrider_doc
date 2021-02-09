@@ -81,13 +81,18 @@ To run the program, using default parameters execute the following commands:
 
 With default parameters, the pace.py progrma will make the robot go between `point(0,0)` and `point(2,0)`
 
-This example uses `odometry` only. If you are using `EKF` please adjust goal controller to use `/odometry/filtered`instead of ``/odom`
+This example uses `odometry` only. If you are using `EKF` please adjust goal controller to use `/odometry/filtered`instead of `/odom`
 
 ### visual_pace.py
 
 Follows a yellow line on background. When there is no more yellow line, the robot executes a 180 degree turn, using goal controller.
 
-[TODO: camera need to be configured]
+>Notice: In order to launch the `robot_cam.launch` you need a camera attached and configured to your robot.
+
+
+
+
+
 
 [TODO: screen capture]
 
