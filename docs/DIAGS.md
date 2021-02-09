@@ -99,6 +99,8 @@ To reset a shutdown, issue a `soft_reset` using the [SYSCTL](SERVICES.md) servic
 
 ---
 
+### Using rqt_plot
+
 **Use rqt_plot to plot /rosrider/diagnostics variables**
 
 Open a terminal window and type:
