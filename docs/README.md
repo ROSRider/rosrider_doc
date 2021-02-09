@@ -2,6 +2,8 @@
 
 ![ROSRider](https://raw.githubusercontent.com/ROSRider/rosrider_doc/main/img/rosrider_v1e_diag.png)
 
+[Prerequisites](PRE.md)
+
 [Getting Started with the ROSRider Board](START.md)
 
 [Installing the ROSRider Software](SOFTWARE.md)
@@ -15,8 +17,6 @@
 [Services](SERVICES.md)
 
 [Diagnostics](DIAGS.md)
-
-[RVIZ](RVIZ.md)
 
 [Examples](EXAMPLES.md)
 

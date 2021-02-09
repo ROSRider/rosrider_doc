@@ -1,6 +1,7 @@
 site_name: ROSRider Documentation
 pages:
 - Readme: README.md
+- Prerequisites: PRE.md
 - Getting Started: START.md
 - Installing the ROSRider Software: SOFTWARE.md
 - Parameters: PARAMS.md

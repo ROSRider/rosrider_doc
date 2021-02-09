@@ -28,18 +28,62 @@ The explanation of the packages are as follows:
 
 To continue, click [PARAMETERS](PARAMS.md)
 
+### Installing IMAGE Package
+
+>This part is optional. The example given is for RaspberryPI. You need your RaspberryPI configured for the camera, and the userland libraries need to be installed and in working condition.
+
+`rosrider_image` package contains the necessary configuration files for image capturing, and rectification.
+
+To get your camera working, execute the following commands.
+
+```console
+cd ~/catkin_ws/src  
+git clone http://gitlab.com/ROSRider/rosrider_image.git  
+git clone https://github.com/UbiquityRobotics/raspicam_node.git
+cd ..
+catkin_make
+source devel/setup.bash
+```
+
+`image_proc.launch` launches image processing node, that rectifies the images.
+
+`cam.launch` launches `raspicam_node` and `image_proc_node`, enabling the camera and rectification. For rectification to work camera must be [calibrated](CALIBRATION.md).
+
+After the commands above have completed successfully, lets see how it works.
+
+```console
+roscd rosrider/launch
+roslaunch robot_cam.launch
+```
+
+
 ### Installing Gazebo Related Software
 
 You can use Gazebo to run ROSRider on your computer. This part is optional.
 
-### Installing IMAGE Package
-
-This part is optional. TODO
 
 ### Installing FXIMU
 
-This part is optional. TODO
+This part is optional.
 
+Create a new rules file by:
+
+```console
+sudo nano /etc/udev/rules.d/99-usb-serial.rules
+```
+
+Add the following inside file:
+
+```console
+KERNEL=="ttyACM*", ATTRS{idVendor}=="fabc", SYMLINK+="fximu"
+KERNEL=="ttyACM*", ATTRS{idVendor}=="1cbe", SYMLINK+="rosrider"
+```
+
+Reboot System
+
+This will allow your system to assign symlinks from `/dev/ttyACM*` to `/dev/rosrider` and `/dev/fximu` Each time your system boots, the symlinks will point to the correct `/dev/ttyACM*`
+
+You must modify the `robot.launch` and `fximu.launch` to open the symlinks instead of the hard coded `/dev/ttyACM0`
 
 
 
