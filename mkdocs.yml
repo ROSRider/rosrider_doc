@@ -6,8 +6,8 @@ pages:
 - Parameters: PARAMS.md
 - Launching ROSRider: LAUNCH.md
 - Subscribers and Publishers:
-    - 'Native': NATIVE.md
-    - 'Others': TOPICS.md
+    - 'ROSRider': NATIVE.md
+    - 'ROS': TOPICS.md
 - Services: SERVICES.md
 - Diagnostics: DIAGS.md
 - RVIZ: RVIZ.md
