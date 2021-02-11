@@ -3,7 +3,7 @@ pages:
 - Readme: README.md
 - Prerequisites: PRE.md
 - Getting Started: START.md
-- Installing ROSRider Software: SOFTWARE.md
+- Installing Software: SOFTWARE.md
 - Parameters: PARAMS.md
 - Launching ROSRider: LAUNCH.md
 - Subscribers and Publishers:

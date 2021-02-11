@@ -1,4 +1,4 @@
-### Installing the ROSRider Software
+### Installing ROSRider Software
 
 >Notice: You have to finish [Getting Started](START.md) before following instructions on this document.
 
