@@ -30,7 +30,9 @@ To continue, click [PARAMETERS](PARAMS.md)
 
 ### Installing IMAGE Package
 
->This part is optional. The example given is for RaspberryPI. You need your RaspberryPI configured for the camera, and the userland libraries need to be installed and in working condition.
+>This part is optional.
+>
+>The example given is for RaspberryPI. You need your RaspberryPI configured for the camera, and the userland libraries need to be installed and in working condition.
 
 `rosrider_image` package contains the necessary configuration files for image capturing, and rectification.
 
@@ -38,7 +40,7 @@ To get your camera working, execute the following commands.
 
 ```console
 cd ~/catkin_ws/src  
-git clone http://gitlab.com/ROSRider/rosrider_image.git  
+git clone https://gitlab.com/ROSRider/rosrider_image.git  
 git clone https://github.com/UbiquityRobotics/raspicam_node.git
 cd ..
 catkin_make
@@ -59,12 +61,24 @@ roslaunch robot_cam.launch
 
 ### Installing Gazebo Related Software
 
-This part is optional. You can use Gazebo to run ROSRider on your computer. Provided that you have installed gazebo and the dependencies successfully as outlined in [prerequisites](PRE.md#gazebo)
+>*This part is optional.*
 
+You can use Gazebo to run ROSRider on your computer. Provided that you have installed gazebo and the dependencies successfully as outlined in [prerequisites](PRE.md#gazebo)
+
+To install the `rosrider_gazebo` package, which contains the worlds and the launch files for simulations:
+
+```console
+cd ~/catkin_ws/src
+git clone https://gitlab.com/ROSRider/rosrider_gazebo
+```
+
+How to use the Gazebo simulations are explained in the [gazebo](GAZEBO.md) section in detail.
 
 ### Installing FXIMU
 
-This part is optional.
+>*This part is optional.*
+
+Both FXIMU and ROSRider are USB serial devices. We want each device to get the same name each time the robot reboots, so the software can work reliably.
 
 Create a new rules file by:
 
@@ -79,12 +93,22 @@ KERNEL=="ttyACM*", ATTRS{idVendor}=="fabc", SYMLINK+="fximu"
 KERNEL=="ttyACM*", ATTRS{idVendor}=="1cbe", SYMLINK+="rosrider"
 ```
 
-Reboot System
+**Reboot System**
 
 This will allow your system to assign symlinks from `/dev/ttyACM*` to `/dev/rosrider` and `/dev/fximu` Each time your system boots, the symlinks will point to the correct `/dev/ttyACM*`
 
-You must modify the `robot.launch` and `fximu.launch` to open the symlinks instead of the hard coded `/dev/ttyACM0`
+You must modify the `robot.launch` and `fximu.launch` to open the symlinks instead of the hard coded `/dev/ttyACM0`, if you are using both ROSRider and FXIMU together.
 
+There is no special install required for the `FXIMU`
+
+The launch file loads fximu parameters from `rosrider/config/fximu_params_000.yaml`. To test if fximu is connecting:
+
+```console
+roscd rosrider/launch
+roslaunch fximu.launch
+```
+
+After connection, you should see topics `/imu/data` which contains the filtered orientation, and acceleration values and `/imu/mag` which contain magnetometer data.
 
 
 
