@@ -26,8 +26,37 @@ roscd rosrider/launch
 roslaunch robot_ekf.launch
 ```
 
-Upon successful launch, you should see the `/odometry/filtered` topic.
+Upon successful launch, you should see the `/odometry/filtered` topic. Use `rostopic echo /odometry/filtered` to see if odometry messages are being published.
 
+While running the goal controller with the EKF, the goal controller must listen to `/odometry/filtered` topic instead of `/odom`, which is the default configuration.
+
+When you launch `robot_ekf.launch` it starts the goal controller node with the argument:
+
+```console
+<arg name="goal_controller_odom_topic" value="/odometry/filtered" />
+````
+
+So it should be listening on `/odometry/filtered`. To test execute:
+
+```console
+rostopic info /odometry/filtered
+```
+
+and see if goal controller has subscribed to it.
+
+[TODO: CAPTURE rostopic info]
+
+### configuration file
+
+[TODO: explain switching to gazebo]
+
+### Using RVIZ
+
+To plot odometry messages use:
+
+```console
+
+```
 
 ### References
 
