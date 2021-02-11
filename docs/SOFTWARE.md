@@ -59,7 +59,7 @@ roslaunch robot_cam.launch
 
 ### Installing Gazebo Related Software
 
-You can use Gazebo to run ROSRider on your computer. This part is optional.
+This part is optional. You can use Gazebo to run ROSRider on your computer. Provided that you have installed gazebo and the dependencies successfully as outlined in [prerequisites](PRE.md#gazebo)
 
 
 ### Installing FXIMU
