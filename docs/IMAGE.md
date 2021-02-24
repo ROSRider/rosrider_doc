@@ -1,12 +1,11 @@
-### rosrider_image 
-
 This package contains launch files to launch camera, and image processing node for image rectification.
 
-Also example nodes which use OpenCV:
+Also example nodes which use OpenCV, for autonomous lane following
+- `color_filter`
+- `lane_filter`
+- `homography_calibration`
+- `birds_eye_filter`
 
-1. `color_filter`
-2. `homography_calibration` and `birds_eye_filter`
-3. `lane_filter`
 
 ### color_filter
 
@@ -97,15 +96,13 @@ Adjust `minLineLength` first, increase in order to filter out small lines. Then 
 
 You might want different parameters for different colors, the white lines can have a longer `minLineLength` i.e.  Adjust `minLineLength` and `maxLineGap` for each channel until detection is done efficiently at all around the tracks. Move your robots to different locations to see if the calibration parameters hold for those conditions
 
-### camera calibration
-
-#### intrinsic calibration  
+#### intrinsic camera calibration  
 
 Intrinsic calibration refers to the distortion of the lens. Once the distortion parameters are known, the image can be rectified.
 
 Follow instructions on: [Camera Calibration](http://wiki.ros.org/camera_calibration)
 
-#### extrinsic calibration
+#### extrinsic camera calibration
 
 Extrinsic calibration refers to detecting ground homography. That is to say, which pixel on the camera corresponds to which pixel on the ground.
 
@@ -173,8 +170,27 @@ Here is another setting for the same filter. As you see, the closer we are to th
 
 ![birds_eye_far](https://raw.githubusercontent.com/ROSRider/rosrider_doc/main/img/birds_eye_far.png)
 
-### how to build an image pipeline
+### image processing pipelines
 
-[TODO: example pipeline]
+Each imaging filter has the private `~input` parameter, that allows to select which image to process.
+
+Here is an example pipeline:
+
+	<launch>
+	  <node name="color_filter" pkg="rosrider_image" type="color_filter.py" output="screen"></node>
+	  <node name="lane_filter" pkg="rosrider_image" type="lane_filter.py" output="screen"></node>
+	  <node name="birds_eye_filter" pkg="rosrider_image" type="birds_eye_filter.py" output="screen">
+	    <param name="input" value="/camera/filter_image" />
+	  </node>
+	</launch>
 
 
+Upon launch, `color_filter` will process the default `/camera/image_raw` and will publish output to `/camera/filter_image`
+
+The second node, `lane_filter` will listen to `/camera/filter_image` and output at `/camera/lane_image`
+
+The third node, `birds_eye_filter` by default listens to `/camera/image_raw` but however in this pipeline we define the input parameter for to listen to `/camera/filter_image`. 
+
+The `birds_eye_filter` publishes output to `/camera/top_image`. 
+
+You can also remap the output of any filter using `<remap>`, and you put image processing filters at any sequence, thus constructing an image processing pipeline.
