@@ -5,7 +5,7 @@ This package contains launch files to launch camera, and image processing node f
 Also example nodes which use OpenCV:
 
 1. `color_filter`
-2. ``homography_calibration` and `birds_eye_filter`
+2. `homography_calibration` and `birds_eye_filter`
 3. `lane_filter`
 
 ### color_filter
