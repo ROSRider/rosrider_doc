@@ -58,6 +58,10 @@ To plot odometry messages use:
 
 ```
 
+[TODO: add links to playlist from youtube]
+
 ### References
 
 Most of these instructions were made possible by: [ros-sensor-fusion-tutorial](https://github.com/methylDragon/ros-sensor-fusion-tutorial/blob/master/01%20-%20ROS%20and%20Sensor%20Fusion%20Tutorial.md)
+
+http://docs.ros.org/en/melodic/api/robot_localization/html/preparing_sensor_data.html

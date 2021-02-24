@@ -13,6 +13,7 @@ pages:
 - Diagnostics: DIAGS.md
 - Examples: EXAMPLES.md
 - EKF: EKF.md
+- Imaging: IMAGE.md
 - Gazebo: GAZEBO.md
 - Calibration: CALIBRATION.md
 - Procedures: PROCEDURES.md
