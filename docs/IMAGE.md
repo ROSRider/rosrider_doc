@@ -1,10 +1,9 @@
-This package contains launch files to launch camera, and image processing node for image rectification.
+This package contains launch files to launch camera, and image processing node for image rectification, also example nodes which use OpenCV, for autonomous lane following  
 
-Also example nodes which use OpenCV, for autonomous lane following
-- `color_filter`
-- `lane_filter`
-- `homography_calibration`
-- `birds_eye_filter`
+- `color_filter`  
+- `lane_filter`  
+- `homography_calibration`  
+- `birds_eye_filter`  
 
 
 ### color_filter
