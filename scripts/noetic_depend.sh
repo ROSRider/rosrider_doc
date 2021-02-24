@@ -29,4 +29,5 @@ sudo apt install ros-noetic-teleop-twist-keyboard -y
 sudo apt install ros-noetic-map-server -y
 sudo apt install ros-noetic-gmapping -y
 sudo apt install ros-noetic-dwa-local-planner -y
+sudo apt install ros-melodic-camera-calibration -y
 #
