@@ -6,7 +6,7 @@ This package contains launch files to launch camera, and image processing node f
 - `birds_eye_filter`  
 
 
-### color_filter
+### color filter
 
 To run:  
 
@@ -95,13 +95,13 @@ Adjust `minLineLength` first, increase in order to filter out small lines. Then 
 
 You might want different parameters for different colors, the white lines can have a longer `minLineLength` i.e.  Adjust `minLineLength` and `maxLineGap` for each channel until detection is done efficiently at all around the tracks. Move your robots to different locations to see if the calibration parameters hold for those conditions
 
-#### intrinsic camera calibration  
+#### intrinsic calibration  
 
 Intrinsic calibration refers to the distortion of the lens. Once the distortion parameters are known, the image can be rectified.
 
 Follow instructions on: [Camera Calibration](http://wiki.ros.org/camera_calibration)
 
-#### extrinsic camera calibration
+#### extrinsic calibration
 
 Extrinsic calibration refers to detecting ground homography. That is to say, which pixel on the camera corresponds to which pixel on the ground.
 
@@ -169,7 +169,7 @@ Here is another setting for the same filter. As you see, the closer we are to th
 
 ![birds_eye_far](https://raw.githubusercontent.com/ROSRider/rosrider_doc/main/img/birds_eye_far.png)
 
-### image processing pipelines
+### processing pipelines
 
 Each imaging filter has the private `~input` parameter, that allows to select which image to process.
 
@@ -192,4 +192,4 @@ The third node, `birds_eye_filter` by default listens to `/camera/image_raw` but
 
 The `birds_eye_filter` publishes output to `/camera/top_image`. 
 
-You can also remap the output of any filter using `<remap>`, and you put image processing filters at any sequence, thus constructing an image processing pipeline.
+You can also remap the output of any filter using `<remap>`, and sequence filters in any order, thus creating image processing pipelines.
