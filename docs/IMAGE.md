@@ -38,7 +38,7 @@ Green channel contains the detected yellow edges. Blue channel contains the dete
 ![filter_image_edges](https://raw.githubusercontent.com/ROSRider/rosrider_doc/main/img/filter_image_edges.png)
 
 
-### color calibration
+**color calibration**
 
 After starting the color\_filter with `_debug:=True` argument, open another terminal and execute:
 
