@@ -1,6 +1,6 @@
 site_name: ROSRider Documentation
 pages:
-- Readme: README.md
+- Introduction: README.md
 - Prerequisites: PRE.md
 - Getting Started: START.md
 - Installing Software: SOFTWARE.md
