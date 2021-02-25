@@ -49,11 +49,17 @@ After obtaining the distortion matrix from the calibration program, you need to 
 
 ### Running Examples
 
-move_tf
-loop_tf
-pace
+**move_tf**
 
-WARNING: sourcing env
+**loop_tf**
+
+**loop_goal**
+
+**pace**
+
+**visual_pace**
+
+**line_follower**
 
 
 ### LaunchFile Breakdown
@@ -80,12 +86,14 @@ These arguments you can specify which coordinates, and orientation the robot wil
   </include>  
 ```
 
-This is where we launch the world. This case it launches the duckie.world file.
+This is where we launch the world. In this case it launches the duckie.world file. You can compose your own worlds with gazebo, and you specify it here. 
 
 ```
   <param name="robot_description" command="$(find xacro)/xacro $(find rosrider_description)/urdf/rosrider.urdf.xacro" />
   <node pkg="gazebo_ros" type="spawn_model" name="spawn_urdf" args="-urdf -model robot1 -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -Y $(arg yaw) -param robot_description" />
 ```
+
+This statement above spawns the robot from its urdf file into simulation. Notice arguments for positioning the robot on the simulation.
 
 ```
   <node pkg="joy" type="joy_node" name="joy_node">
@@ -95,12 +103,16 @@ This is where we launch the world. This case it launches the duckie.world file.
   </node>
 ```
 
+This statement above launches the joystick node. This node will measure joystick data, and publish it on `/joy` topic. In case your robot does not respond to joystick commands, this is the first place to check.
+
 ```
   <node pkg="teleop_twist_joy" name="teleop_twist_joy" type="teleop_node">
       <rosparam command="load" file="$(arg config_filepath)" />
   </node>
 
 ```
+
+This statement above launches `teleop_twist_joy`, which basically listens to joystick on `/joy` and publishes `/cmd_vel`
 
 ```
   <node name="diff_drive_go_to_goal" pkg="rosrider_diff_drive" type="diff_drive_go_to_goal" output="screen">
@@ -119,7 +131,7 @@ This is where we launch the world. This case it launches the duckie.world file.
   </node>
 ```
 
-
+The statement above launches the goal controller. When running the simulation, we dont need to launch the `rosrider_diff_drive` because gazebo has a `diff_drive` plugin. However the `goal_controller` is required for the simulations.
 
 
 ### Gazebo and RVIZ
@@ -129,5 +141,23 @@ make gazebo, and rviz run side by side
 
 ### Utilities
 
-gazal script
+Sometimes the gazebo simulator does not quit, or takes a long time to shutdown when using with ROS. Put the following bash script under your `~/bin`, and execute it to kill the server and the client, when required.
 
+**degas.sh**
+
+```
+#!/bin/bash
+server=`pidof gzserver`
+client=`pidof gzclient`
+if [[ $server ]]; then
+  kill -9 $server
+fi
+if [[ $server ]]; then
+  kill -9 $client
+fi
+```
+
+
+### Troubleshooting
+
+**Notice:** always source your `~/catkin_ws/src/rosrider_gazebo/setup.bash` before working with gazebo
