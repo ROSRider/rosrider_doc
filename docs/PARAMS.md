@@ -27,7 +27,6 @@ max_idle_seconds: 1800,
 /right_wheel/controller/Ki: 3.2,
 /right_wheel/controller/Kd: 0.02
 }
-
 ```
 
 Compose the configuration file correctly, and ROSRider will provide a differential drive controller, odomety, goal controller, ekf based localization based on your parameters.

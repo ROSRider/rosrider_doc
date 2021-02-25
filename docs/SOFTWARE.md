@@ -30,9 +30,9 @@ To continue, click [PARAMETERS](PARAMS.md)
 
 ### Installing IMAGE Package
 
->This part is optional.
->
->The example given is for RaspberryPI. You need your RaspberryPI configured for the camera, and the userland libraries need to be installed and in working condition.
+>Notice: This part is optional.
+
+The example given is for RaspberryPI. You need your RaspberryPI configured for the camera, and the userland libraries need to be installed and in working condition.
 
 `rosrider_image` package contains the necessary configuration files for image capturing, and rectification.
 
