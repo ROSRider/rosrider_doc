@@ -49,7 +49,7 @@ After obtaining the distortion matrix from the calibration program, you need to 
 
 ### Running Examples
 
-All examples that run on the robot also runs on gazebo simulator, as explained in [EXAMPLES](EXAMPLES.md) chapter.
+All examples that run on the robot also runs on gazebo simulator, as explained in [EXAMPLES](https://rosrider.readthedocs.io/en/latest/EXAMPLES) chapter.
 
 **move_tf**
 
