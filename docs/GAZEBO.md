@@ -49,18 +49,31 @@ After obtaining the distortion matrix from the calibration program, you need to 
 
 ### Running Examples
 
+All examples that run on the robot also runs on gazebo simulator, as explained in [EXAMPLES](EXAMPLES.md) chapter.
+
 **move_tf**
+
+- Moves robot to point x,y
 
 **loop_tf**
 
-**loop_goal**
+- Reads a file containing a list of points, and follows the trajectory of points.
 
 **pace**
 
+- Using the goal controller, robot moves between points A and B
+
+**loop_goal**
+
+- Reads a file containing a list of goals, executes the goals in a loop.
+
 **visual_pace**
+
+- Visually follows a line, when line finishes, robot executes 180 degree turn, then continues to follow line.
 
 **line_follower**
 
+- Visually follows a line. [TODO: explain launch file on examples.  `line_detector` node needs to be running as well.]
 
 ### LaunchFile Breakdown
 
@@ -112,7 +125,7 @@ This statement above launches the joystick node. This node will measure joystick
 
 ```
 
-This statement above launches `teleop_twist_joy`, which basically listens to joystick on `/joy` and publishes `/cmd_vel`
+This statement above launches `teleop_twist_joy`, which basically listens to joystick on `/joy` and publishes twist commands to`/cmd_vel`
 
 ```
   <node name="diff_drive_go_to_goal" pkg="rosrider_diff_drive" type="diff_drive_go_to_goal" output="screen">
@@ -160,4 +173,4 @@ fi
 
 ### Troubleshooting
 
-**Notice:** always source your `~/catkin_ws/src/rosrider_gazebo/setup.bash` before working with gazebo
+**Notice:** always source your `~/catkin_ws/src/rosrider_gazebo/setup.bash` before working with gazebo.

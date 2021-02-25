@@ -23,7 +23,7 @@ To run the program, with default `speed`, `kp`, and `tolerances`, execute the fo
 
 And the robot will go to point (1,0)
 
-### loop_tf.pg
+### loop_tf.py
 
 Reads a file, consisting of waypoints, and follows the trajectory of these waypoints in infinite loop. Arguments are:
 
@@ -54,6 +54,7 @@ To run the program, execute the following commands:
 
 Will make the robot follow an ellipse trajectory, as given by ```e0.txt``` file.
 
+
 ### pace.py
 
 Paces the robot between two points, using goal controller. The goal controller has to be on for this program to work, which usually happens when you launch `robot.launch`
@@ -83,6 +84,10 @@ With default parameters, the pace.py progrma will make the robot go between `poi
 
 This example uses `odometry` only. If you are using `EKF` please adjust goal controller to use `/odometry/filtered`instead of `/odom`
 
+### loop_goal.py
+
+[TODO]
+
 ### visual_pace.py
 
 Follows a yellow line on background. When there is no more yellow line, the robot executes a 180 degree turn, using goal controller.
@@ -100,3 +105,7 @@ To see the ROS Console, while the robot is in operation, click the image below:
 [![Visual Pace Console](https://raw.githubusercontent.com/ROSRider/rosrider_doc/main/img/visual_pace_console.png)](https://www.youtube.com/watch?v=MUS3nrNKr90 "Visual Pace Console")
 
 Click [here](https://raw.githubusercontent.com/ROSRider/rosrider_doc/main/webm/visual_pace.webm) for screencast.
+
+### line_follower.py
+
+[TODO explain line_detector]
