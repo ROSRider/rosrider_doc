@@ -86,7 +86,13 @@ This example uses `odometry` only. If you are using `EKF` please adjust goal con
 
 ### loop_goal.py
 
-[TODO]
+While the `pace.py` makes the robot go between two points, `loop_goal.py` reads a list of goals from a file, and executes the goals in a loop. `rosrider_examples/data/goals.txt` is an example goal list. The following line defines a goal:
+
+```
+0.12 0 0.707 0.707
+```
+
+The first two numbers are x, y coordinates. The last two numbers are orientation as a quaternion. Only z, w of quaternion is used, since we are operating on a 2D plane.
 
 ### visual_pace.py
 
@@ -94,7 +100,9 @@ Follows a yellow line on background. When there is no more yellow line, the robo
 
 >Notice: In order to launch the `robot_cam.launch` you need a camera attached and configured to your robot.
 
-[TODO: explanation launch node parametrize node]
+[TODO: launch file. line_detector.py]
+
+[TODO: reconf window]
 
 To see a video of robot in operation, click the image below:
 
@@ -106,6 +114,23 @@ To see the ROS Console, while the robot is in operation, click the image below:
 
 Click [here](https://raw.githubusercontent.com/ROSRider/rosrider_doc/main/webm/visual_pace.webm) for screencast.
 
-### line_follower.py
+### line_follower
 
-[TODO explain line_detector]
+This example consists of two nodes, `line_detector` which detects the line by using image processing and `line_follower` which drives the robot getting `/line_data` from the `line_detector` node.
+
+To launch line_follower:
+
+```
+	roscd rosrider_examples/launch
+	roslaunch line_follower.launch
+```
+
+To tune parameters of `line_follower` and `line_detector`:
+
+```
+	rosrun rqt_reconfigure rqt_reconfigure
+```
+
+You can configure kP, kI, kD for the line following PID algorithm, as well as cruise_speed, terminal speed.
+
+>Notice: the `line_follower` node listens to `/cmd_input` for joystick. If command is send from joystick, it will override the line following algorithm, allowing control with joystick. As soon as joystick is released, the line following algorithm will continue.

@@ -49,7 +49,16 @@ After obtaining the distortion matrix from the calibration program, you need to 
 
 ### Running Examples
 
-All examples that run on the robot also runs on gazebo simulator, as explained in [EXAMPLES](https://rosrider.readthedocs.io/en/latest/EXAMPLES) chapter.
+First launch one of the gazebo worlds:
+
+```
+	roscd rosrider_gazebo/launch
+	roslaunch line.world
+```
+
+After that all examples that run on the robot also runs on gazebo simulator, as explained in [EXAMPLES](https://rosrider.readthedocs.io/en/latest/EXAMPLES) chapter.
+
+Examples are outlined below:
 
 **move_tf**
 
@@ -61,7 +70,7 @@ All examples that run on the robot also runs on gazebo simulator, as explained i
 
 **pace**
 
-- Using the goal controller, robot moves between points A and B
+- Using the goal controller, robot moves between points A and B.
 
 **loop_goal**
 
@@ -73,7 +82,7 @@ All examples that run on the robot also runs on gazebo simulator, as explained i
 
 **line_follower**
 
-- Visually follows a line. [TODO: explain launch file on examples.  `line_detector` node needs to be running as well.]
+- Visually follows a line. Use `racetrack.launch` for this example.
 
 ### LaunchFile Breakdown
 
@@ -149,7 +158,7 @@ The statement above launches the goal controller. When running the simulation, w
 
 ### Gazebo and RVIZ
 
-make gazebo, and rviz run side by side 
+[TODO: gazebo, and rviz run side by side]
 
 
 ### Utilities
