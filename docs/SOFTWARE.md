@@ -89,8 +89,8 @@ sudo nano /etc/udev/rules.d/99-usb-serial.rules
 Add the following inside file:
 
 ```console
-KERNEL=="ttyACM*", ATTRS{idVendor}=="fabc", SYMLINK+="fximu"
-KERNEL=="ttyACM*", ATTRS{idVendor}=="1cbe", SYMLINK+="rosrider"
+KERNEL=="ttyACM*", ATTRS{idVendor}=="1cbe", ATTRS{idProduct}=="0002", ATTRS{serial}=="91234567", SYMLINK+="fximu"
+KERNEL=="ttyACM*", ATTRS{idVendor}=="1cbe", ATTRS{idProduct}=="0002", ATTRS{serial}=="12345678", SYMLINK+="rosrider"
 ```
 
 **Reboot System**

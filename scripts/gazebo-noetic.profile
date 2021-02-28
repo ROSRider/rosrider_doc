@@ -49,6 +49,10 @@ devices:
   mygpu:
     type: gpu
   eth0:
+    name: eth0
+    network: lxdbr0
+    type: nic
+  eth1:
     nictype: macvlan
     parent: enp63s0
     type: nic
