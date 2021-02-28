@@ -80,18 +80,39 @@ How to use the Gazebo simulations are explained in the [gazebo](GAZEBO.md) secti
 
 Both FXIMU and ROSRider are USB serial devices. We want each device to get the same name each time the robot reboots, so the software can work reliably.
 
+First, obtain the usb serial id of your FXIMU by executing the following command:
+
+```
+udevadm info -a -n /dev/ttyACM0 | grep '{serial}'
+```
+
+It will return:
+
+```
+ATTRS{serial}=="0000000A"
+ATTRS{serial}=="0000:00:14.0"
+```
+
+In this case, the usb serial id is `0000000A`, which is a string.
+
 Create a new rules file by:
 
 ```console
 sudo nano /etc/udev/rules.d/99-usb-serial.rules
 ```
 
-Add the following inside file:
+Add the following inside the file, after replacing the FXIMU usb serial id:
 
 ```console
-KERNEL=="ttyACM*", ATTRS{idVendor}=="1cbe", ATTRS{idProduct}=="0002", ATTRS{serial}=="91234567", SYMLINK+="fximu"
+KERNEL=="ttyACM*", ATTRS{idVendor}=="1cbe", ATTRS{idProduct}=="0002", ATTRS{serial}=="0000000A", SYMLINK+="fximu"
+```
+
+If you also have the ROSRider board, after replacing the ROSRider board usb serial id:
+
+```
 KERNEL=="ttyACM*", ATTRS{idVendor}=="1cbe", ATTRS{idProduct}=="0002", ATTRS{serial}=="12345678", SYMLINK+="rosrider"
 ```
+
 
 **Reboot System**
 
